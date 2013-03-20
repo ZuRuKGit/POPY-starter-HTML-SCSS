@@ -1,0 +1,26 @@
+/*
+Version: 1.0
+Projet: POPY - Starter intégration
+Author: Laurent SUTTERLITY - laurent@sutterlity.fr
+Date: 19 mars 2013
+*/
+
+// ----------------------------------------------------------
+// == Site settings
+// ----------------------------------------------------------
+
+// Fonts
+$font-base: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-px: 16; // ne pas mettre px
+$font-size-em : #{$font-size-px/10}em;
+$line-height: 1.5;
+
+// = Colors
+// -----------------------------
+
+// Text
+$clr-text-base: #212121;
+
+// link
+$clr-link: #000;
+$clr-link-hover: #555;
