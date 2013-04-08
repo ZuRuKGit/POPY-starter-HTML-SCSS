@@ -1,7 +1,9 @@
+@charset "UTF-8";
+
 /*
-Version: 1.0
 Projet: POPY - Starter intégration
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
+Version: 1.0
 Date: 19 mars 2013
 */
 
@@ -24,3 +26,6 @@ $clr-text-base: #212121;
 // link
 $clr-link: #000;
 $clr-link-hover: #555;
+
+// Mixin Placeholder
+$clr-mixin-placeholder: #cdcdcd;

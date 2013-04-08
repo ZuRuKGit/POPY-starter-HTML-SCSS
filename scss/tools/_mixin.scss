@@ -1,0 +1,154 @@
+// ----------------------------------------------------------
+// == Base
+// ----------------------------------------------------------
+
+// = Inline-block
+// -----------------------------
+@mixin inline-block {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+// ----------------------------------------------------------
+// == Opacity
+// ----------------------------------------------------------
+@mixin opacity($opacity) {
+	filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+	opacity: $opacity;
+}
+
+// = Placeholder
+// -----------------------------
+@mixin placeholder($color : $clr-mixin-placeholder) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+// = Position
+// -----------------------------
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+	@if type-of($position) == list {
+		$coordinates: $position;
+		$position: relative;
+	}
+	$top: nth($coordinates, 1);
+	$right: nth($coordinates, 2);
+	$bottom: nth($coordinates, 3);
+	$left: nth($coordinates, 4);
+	position: $position;
+	@if $top == auto {
+		top: $top;
+	}
+	@else if not(unitless($top)) {
+		top: $top;
+	}
+	@if $right == auto {
+		right: $right;
+	}
+	@else if not(unitless($right)) {
+		right: $right;
+	}
+	@if $bottom == auto {
+		bottom: $bottom;
+	}
+	@else if not(unitless($bottom)) {
+		bottom: $bottom;
+	}
+	@if $left == auto {
+		left: $left;
+	}
+	@else if not(unitless($left)) {
+		left: $left;
+	}
+}
+
+// ----------------------------------------------------------
+// == CSS3
+// ----------------------------------------------------------
+
+// = Prefixer
+// -----------------------------
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default;
+
+@mixin prefixer ($property, $value, $prefixes) {
+	@each $prefix in $prefixes {
+
+		@if $prefix == webkit and $prefix-for-webkit == true {
+			-webkit-#{$property}: $value;
+		}
+		@else if $prefix == moz and $prefix-for-mozilla == true {
+			-moz-#{$property}: $value;
+		}
+		@else if $prefix == ms and $prefix-for-microsoft == true {
+			-ms-#{$property}: $value;
+		}
+		@else if $prefix == o and $prefix-for-opera == true {
+			-o-#{$property}: $value;
+		}
+		@else if $prefix == spec and $prefix-for-spec == true {
+			#{$property}: $value;
+		}
+		@else {
+			@warn "Unrecognized prefix: #{$prefix}";
+		}
+	}
+}
+
+@mixin disable-prefix-for-all() {
+	$prefix-for-webkit:    false;
+	$prefix-for-mozilla:   false;
+	$prefix-for-microsoft: false;
+	$prefix-for-opera:     false;
+	$prefix-for-spec:      false;
+}
+
+// = Border-radius
+// -----------------------------
+@mixin border-radius($radius : 5px) {
+	@include prefixer(border-radius, $radius, spec)
+}
+
+@mixin border-top-radius($radius : 5px) {
+	@include prefixer(border-top-left-radius, $radius, spec);
+	@include prefixer(border-top-right-radius, $radius, spec);
+}
+
+@mixin border-bottom-radius($radius : 5px) {
+	@include prefixer(border-bottom-left-radius, $radius, spec);
+	@include prefixer(border-bottom-right-radius, $radius, spec);
+}
+
+@mixin border-left-radius($radius : 5px) {
+	@include prefixer(border-top-left-radius, $radius, spec);
+	@include prefixer(border-bottom-left-radius, $radius, spec);
+}
+
+@mixin border-right-radius($radius : 5px) {
+	@include prefixer(border-top-right-radius, $radius, spec);
+	@include prefixer(border-bottom-right-radius, $radius, spec);
+}
+
+// = Transition
+// -----------------------------
+@mixin transition ($transition : all .3s ease-in-out) {
+	@include prefixer(transition, $transition, webkit moz ms o spec);
+}
+
+// = Box-sizing
+// -----------------------------
+@mixin box-sizing ($box : border-box) {
+	//  content-box | border-box | inherit
+	@include prefixer(box-sizing, $box, webkit moz spec);
+}

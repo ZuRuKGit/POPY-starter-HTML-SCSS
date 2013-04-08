@@ -9,7 +9,7 @@ javascripts_dir = "js"
 fonts_dir = "fonts"
 
 output_style = :expanded
-environment = :development
+environment = :production
 
 relative_assets = true
 

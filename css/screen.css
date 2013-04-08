@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /*
-Version: 1.0
 Projet: POPY - Starter intégration
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
+Version: 1.0
 Date: 19 mars 2013
 */
 /* ---------------------------------------------------------- */
@@ -9,31 +10,26 @@ Date: 19 mars 2013
 /* ---------------------------------------------------------- */
 /* = HTML5 display definitions */
 /* ----------------------------- */
-/* line 10, ../scss/base/_normalize.scss */
 article, aside, details, figcaption, figure, footer,
 header, hgroup, main, nav, section, summary {
   display: block;
 }
 
-/* line 15, ../scss/base/_normalize.scss */
 audio, canvas, video {
   display: inline-block;
 }
 
-/* line 21, ../scss/base/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 27, ../scss/base/_normalize.scss */
 [hidden] {
   display: none;
 }
 
 /* = Base */
 /* ----------------------------- */
-/* line 35, ../scss/base/_normalize.scss */
 html {
   height: 100%;
   font-size: 62.5%;
@@ -42,12 +38,10 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-/* line 43, ../scss/base/_normalize.scss */
 .lt-ie7 body {
   height: 100%;
 }
 
-/* line 48, ../scss/base/_normalize.scss */
 body {
   position: relative;
   min-height: 100%;
@@ -59,56 +53,45 @@ body {
 
 /* = link */
 /* ----------------------------- */
-/* line 60, ../scss/base/_normalize.scss */
 a {
   color: black;
 }
-/* line 62, ../scss/base/_normalize.scss */
 a:hover {
   color: #555555;
 }
-/* line 66, ../scss/base/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
-/* line 70, ../scss/base/_normalize.scss */
 a:active, a:hover {
   outline: 0;
 }
 
 /* = Typography */
 /* ----------------------------- */
-/* line 78, ../scss/base/_normalize.scss */
 h1, .h1-like {
   font-size: 1.875em;
 }
 
-/* line 82, ../scss/base/_normalize.scss */
 h2, .h2-like {
   font-size: 1.75em;
 }
 
-/* line 86, ../scss/base/_normalize.scss */
 h3, .h3-like {
   font-size: 1.625em;
 }
 
-/* line 90, ../scss/base/_normalize.scss */
 h4, .h4-like {
   font-size: 1.5em;
 }
 
-/* line 94, ../scss/base/_normalize.scss */
 h5, .h5-like {
   font-size: 1.25em;
 }
 
-/* line 98, ../scss/base/_normalize.scss */
 h6, .h6-like {
   font-size: 1.125em;
 }
 
-/* line 108, ../scss/base/_normalize.scss */
 h1, .h1-like,
 h2, .h2-like,
 h3, .h3-like,
@@ -121,7 +104,6 @@ h6, .h6-like {
   font-weight: bold;
   text-rendering: optimizeLegibility;
 }
-/* line 114, ../scss/base/_normalize.scss */
 h1:fist-child, .h1-like:fist-child,
 h2:fist-child, .h2-like:fist-child,
 h3:fist-child, .h3-like:fist-child,
@@ -131,56 +113,46 @@ h6:fist-child, .h6-like:fist-child {
   margin-top: 0;
 }
 
-/* line 120, ../scss/base/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 125, ../scss/base/_normalize.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 128, ../scss/base/_normalize.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 131, ../scss/base/_normalize.scss */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-/* line 138, ../scss/base/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 144, ../scss/base/_normalize.scss */
 code, kbd, pre, samp {
   font-family: monospace, serif;
   font-size: 1em;
 }
 
-/* line 150, ../scss/base/_normalize.scss */
 pre {
   white-space: pre-wrap;
 }
 
-/* line 153, ../scss/base/_normalize.scss */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/* line 156, ../scss/base/_normalize.scss */
 small {
   font-size: 80%;
 }
 
-/* line 159, ../scss/base/_normalize.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -188,89 +160,74 @@ sub, sup {
   vertical-align: baseline;
 }
 
-/* line 165, ../scss/base/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 167, ../scss/base/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
 
 /* = Embedded content */
 /* ----------------------------- */
-/* line 173, ../scss/base/_normalize.scss */
 img {
   border: 0;
 }
 
-/* line 175, ../scss/base/_normalize.scss */
 .lt-ie8 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 179, ../scss/base/_normalize.scss */
 video, img, object {
   max-width: 100%;
   height: auto;
 }
 
-/* line 184, ../scss/base/_normalize.scss */
 iframe {
   border: 0;
 }
 
-/* line 187, ../scss/base/_normalize.scss */
 img, input[type=image] {
   vertical-align: bottom;
 }
 
-/* line 190, ../scss/base/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* = Figure */
 /* ----------------------------- */
-/* line 196, ../scss/base/_normalize.scss */
 figure {
   margin: 0;
 }
 
 /* = Form */
 /* ----------------------------- */
-/* line 202, ../scss/base/_normalize.scss */
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 210, ../scss/base/_normalize.scss */
 legend {
   border: 0;
   padding: 0;
 }
 
-/* line 218, ../scss/base/_normalize.scss */
 button, input, select, textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
 }
 
-/* line 226, ../scss/base/_normalize.scss */
 button, input {
   line-height: normal;
 }
 
-/* line 232, ../scss/base/_normalize.scss */
 button, select {
   text-transform: none;
 }
 
-/* line 243, ../scss/base/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -279,18 +236,25 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 249, ../scss/base/_normalize.scss */
 button[disabled], html input[disabled] {
   cursor: default;
 }
 
-/* line 253, ../scss/base/_normalize.scss */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 261, ../scss/base/_normalize.scss */
+input::-webkit-input-placeholder {
+  color: #cdcdcd;
+}
+input:-moz-placeholder {
+  color: #cdcdcd;
+}
+input:-ms-input-placeholder {
+  color: #cdcdcd;
+}
+
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -298,24 +262,20 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 271, ../scss/base/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 276, ../scss/base/_normalize.scss */
 input[type="submit"], input[type="image"], button {
   cursor: pointer;
 }
 
-/* line 279, ../scss/base/_normalize.scss */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 286, ../scss/base/_normalize.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -323,7 +283,6 @@ textarea {
 
 /* = Table */
 /* ----------------------------- */
-/* line 295, ../scss/base/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -332,61 +291,47 @@ table {
 /* ---------------------------------------------------------- */
 /* == Helper */
 /* ---------------------------------------------------------- */
-/* ---------------------------------------------------------- */
-/* == Helper */
-/* ---------------------------------------------------------- */
-/* line 6, ../scss/base/_helper.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 10, ../scss/base/_helper.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 14, ../scss/base/_helper.scss */
-.lt-ie7 {
+.lt-ie7 .clearfix {
   zoom: 1;
 }
 
-/* line 16, ../scss/base/_helper.scss */
 .left {
   float: left !important;
 }
 
-/* line 18, ../scss/base/_helper.scss */
 .right {
   float: right !important;
 }
 
-/* line 20, ../scss/base/_helper.scss */
 .center-h {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 25, ../scss/base/_helper.scss */
 .text-left {
   text-align: left !important;
 }
 
-/* line 27, ../scss/base/_helper.scss */
 .text-right {
   text-align: right !important;
 }
 
-/* line 29, ../scss/base/_helper.scss */
 .text-center {
   text-align: center !important;
 }
 
-/* line 31, ../scss/base/_helper.scss */
 .text-justify {
   text-align: justify !important;
 }
 
-/* line 33, ../scss/base/_helper.scss */
 .hide {
   display: none;
 }

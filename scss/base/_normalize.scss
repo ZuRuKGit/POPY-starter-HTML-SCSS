@@ -255,6 +255,10 @@ input[type="checkbox"], input[type="radio"] {
 	padding: 0; // 2
 }
 
+input {
+	@include placeholder();
+}
+
 // 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
 // 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
 //    (include `-moz` to future-proof).
