@@ -2,18 +2,7 @@
 /* == Helper */
 /* ---------------------------------------------------------- */
 .clearfix {
-	&:before, &:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
-.lt-ie7 {
-	.clearfix {
-		zoom: 1
-	}
+	@include clearfix();
 }
 
 .left { float: left !important }

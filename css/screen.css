@@ -288,19 +288,26 @@ table {
   border-spacing: 0;
 }
 
+li {
+  display: inline-block;
+}
+.lt-ie8 li {
+  display: inline;
+  zoom: 1;
+}
+
 /* ---------------------------------------------------------- */
 /* == Helper */
 /* ---------------------------------------------------------- */
+.lt-ie8 .clearfix {
+  zoom: 1;
+}
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
 .clearfix:after {
   clear: both;
-}
-
-.lt-ie7 .clearfix {
-  zoom: 1;
 }
 
 .left {
