@@ -284,62 +284,75 @@ table {
    ---------------------------------------- */
 /* Grid
    ----------------------- */
-.row {
-  width: 360px;
+.wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 [class*=col-] {
   float: left;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 1%;
+  margin-right: 1%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.row > [class*="col-"]:first-child {
+  margin-left: 0;
+}
+
+.row > [class*="col-"]:last-child {
+  margin-right: 0;
 }
 
 .col-1 {
-  width: 20px;
+  width: 6.5%;
 }
 
 .col-2 {
-  width: 50px;
+  width: 15%;
 }
 
 .col-3 {
-  width: 80px;
+  width: 23.5%;
 }
 
 .col-4 {
-  width: 110px;
+  width: 32%;
 }
 
 .col-5 {
-  width: 140px;
+  width: 40.5%;
 }
 
 .col-6 {
-  width: 170px;
+  width: 49%;
 }
 
 .col-7 {
-  width: 200px;
+  width: 57.5%;
 }
 
 .col-8 {
-  width: 230px;
+  width: 66%;
 }
 
 .col-9 {
-  width: 260px;
+  width: 74.5%;
 }
 
 .col-10 {
-  width: 290px;
+  width: 83%;
 }
 
 .col-11 {
-  width: 320px;
+  width: 91.5%;
 }
 
 .col-12 {
-  width: 350px;
+  width: 100%;
 }
 
 /* List inline
@@ -361,6 +374,27 @@ table {
 /* ----------------------------------------
    No module
    ---------------------------------------- */
+#header {
+  background: #ccc;
+  min-height: 80px;
+}
+
+#content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #ddd;
+}
+
+#section, #aside {
+  min-height: 200px;
+  background: #ccc;
+}
+
+#footer {
+  background: #ccc;
+  min-height: 80px;
+}
+
 /* ----------------------------------------
    RWD
    ---------------------------------------- */

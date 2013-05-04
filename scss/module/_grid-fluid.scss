@@ -1,0 +1,56 @@
+// Total width of content
+$container-width: 100%;
+
+// Number of columns
+$cols: 12;
+
+// Each side margin of a column
+$col-gutter-width: 1%;
+
+// Column width
+$col-width: ($container-width - ( ($cols - 1) * ( $col-gutter-width * 2 ) ) ) / $cols;
+
+// External width of a column, counting each side of the gutter
+$col-outer-width: $col-width + $col-gutter-width * 2;
+
+
+// Mixin
+@mixin col($cols) {
+	width: $cols * $col-width + ($col-gutter-width * 2) * ($cols - 1); // size of the block
+}
+
+/* Grid
+   ----------------------- */
+
+.wrapper {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.row {
+	@extend .clearfix;
+}
+
+[class*=col-] {
+	float: left;
+	margin: {
+		left: $col-gutter-width;
+		right: $col-gutter-width;
+	}
+	@include box-sizing(border-box);
+}
+
+.row > [class*="col-"]:first-child {
+	margin-left: 0;
+}
+
+.row > [class*="col-"]:last-child {
+	margin-right: 0;
+}
+
+@for $i from 1 through $cols {
+	.col-#{$i} {
+		@include col($i);
+	}
+}
