@@ -2,14 +2,14 @@
 /*
 Projet: POPY - Starter intégration
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
-Version: 1.0
-Date: 19 mars 2013
+Version: 1.1
+Date: 04 mai 2013
 */
-/* ---------------------------------------------------------- */
-/* == Normalize */
-/* ---------------------------------------------------------- */
-/* = HTML5 display definitions */
-/* ----------------------------- */
+/* ----------------------------------------
+   Base
+   ---------------------------------------- */
+/* Html 5 definition
+   ----------------------- */
 article, aside, details, figcaption, figure, footer,
 header, hgroup, main, nav, section, summary {
   display: block;
@@ -19,8 +19,8 @@ header, hgroup, main, nav, section, summary {
   display: none;
 }
 
-/* = Base */
-/* ----------------------------- */
+/* Base
+   ----------------------- */
 html {
   height: 100%;
   font-size: 62.5%;
@@ -42,8 +42,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* = link */
-/* ----------------------------- */
+/* Link
+    ----------------------- */
 a {
   color: black;
 }
@@ -57,8 +57,8 @@ a:active, a:hover {
   outline: 0;
 }
 
-/* = Typography */
-/* ----------------------------- */
+/* Typography
+   ----------------------- */
 h1, .h1-like {
   font-size: 1.875em;
 }
@@ -159,8 +159,8 @@ sub {
   bottom: -0.25em;
 }
 
-/* = Embedded content */
-/* ----------------------------- */
+/* Embedded content
+    ----------------------- */
 img {
   border: 0;
 }
@@ -186,14 +186,14 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-/* = Figure */
-/* ----------------------------- */
+/* Figure
+   ----------------------- */
 figure {
   margin: 0;
 }
 
-/* = Form */
-/* ----------------------------- */
+/* Form
+   ----------------------- */
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -272,41 +272,149 @@ textarea {
   vertical-align: top;
 }
 
-/* = Table */
-/* ----------------------------- */
+/* Table
+   ----------------------- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-li {
-  display: inline-block;
-}
-.lt-ie8 li {
-  display: inline;
-  zoom: 1;
+/* ----------------------------------------
+   Module
+   ---------------------------------------- */
+/* Grid
+   ----------------------- */
+.row {
+  width: 360px;
 }
 
-/* ---------------------------------------------------------- */
-/* == Helper */
-/* ---------------------------------------------------------- */
-.lt-ie8 .clearfix {
+[class*=col-] {
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.col-1 {
+  width: 20px;
+}
+
+.col-2 {
+  width: 50px;
+}
+
+.col-3 {
+  width: 80px;
+}
+
+.col-4 {
+  width: 110px;
+}
+
+.col-5 {
+  width: 140px;
+}
+
+.col-6 {
+  width: 170px;
+}
+
+.col-7 {
+  width: 200px;
+}
+
+.col-8 {
+  width: 230px;
+}
+
+.col-9 {
+  width: 260px;
+}
+
+.col-10 {
+  width: 290px;
+}
+
+.col-11 {
+  width: 320px;
+}
+
+.col-12 {
+  width: 350px;
+}
+
+/* List inline
+   ----------------------- */
+.m-list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.m-list-inline li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.m-list-inline li:last-child {
+  margin-right: 0px;
+}
+
+/* ----------------------------------------
+   No module
+   ---------------------------------------- */
+/* ----------------------------------------
+   RWD
+   ---------------------------------------- */
+/* Big screen
+   ----------------------- */
+@media only screen and (min-width: 1280px) {
+  /* Declarations */
+}
+/* Normal screen
+   ----------------------- */
+@media only screen and (max-width: 1280px) and (mix-width: 768px) {
+  /* Declarations */
+}
+/* Medium screen
+   ----------------------- */
+@media only screen and (max-width: 768px) {
+  /* Declarations */
+}
+/* Small screen
+   ----------------------- */
+@media only screen and (max-width: 640px) {
+  /* Declarations */
+}
+/* ----------------------------------------
+   Helper
+   ---------------------------------------- */
+.lt-ie8 .clearfix, .lt-ie8 .row {
   zoom: 1;
 }
-.clearfix:before, .clearfix:after {
+.clearfix:before, .row:before, .clearfix:after, .row:after {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after, .row:after {
   clear: both;
 }
 
-.left {
-  float: left !important;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  border: 0;
 }
 
-.right {
-  float: right !important;
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
 }
 
 .center-h {
@@ -314,20 +422,20 @@ li {
   margin-right: auto;
 }
 
-.text-left {
-  text-align: left !important;
+.align-left {
+  text-align: left;
 }
 
-.text-right {
-  text-align: right !important;
+.align-right {
+  text-align: right;
 }
 
-.text-center {
-  text-align: center !important;
+.align-center {
+  text-align: center;
 }
 
 .text-justify {
-  text-align: justify !important;
+  text-align: justify;
 }
 
 .hide {

@@ -1,9 +1,5 @@
-/* ---------------------------------------------------------- */
-/* == Normalize */
-/* ---------------------------------------------------------- */
-
-/* = HTML5 display definitions */
-/* ----------------------------- */
+/* Html 5 definition
+   ----------------------- */
 
 // Correct `block` display not defined in IE 8/9.
 article, aside, details, figcaption, figure, footer,
@@ -27,8 +23,9 @@ header, hgroup, main, nav, section, summary {
 // Address styling not present in IE 8/9.
 [hidden] { display: none }
 
-/* = Base */
-/* ----------------------------- */
+/* Base
+   ----------------------- */
+
 
 // 1. Set default font family to sans-serif.
 // 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
@@ -55,8 +52,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* = link */
-/* ----------------------------- */
+/* Link
+    ----------------------- */
 
 a {
 	color: $clr-link;
@@ -73,8 +70,8 @@ a {
 	}
 }
 
-/* = Typography */
-/* ----------------------------- */
+/* Typography
+   ----------------------- */
 
 h1, .h1-like {
 	font-size: pxtoem(30, $font-size-px);
@@ -167,8 +164,8 @@ sup { top: -0.5em }
 
 sub { bottom: -0.25em }
 
-/* = Embedded content */
-/* ----------------------------- */
+/* Embedded content
+    ----------------------- */
 
 // Remove border when inside `a` element in IE 8/9.
 img { border: 0 }
@@ -190,14 +187,14 @@ img, input[type=image] { vertical-align: bottom }
 // Correct overflow displayed oddly in IE 9.
 svg:not(:root) { overflow: hidden }
 
-/* = Figure */
-/* ----------------------------- */
+/* Figure
+   ----------------------- */
 
 // Address margin not present in IE 8/9 and Safari 5
 figure { margin: 0 }
 
-/* = Form */
-/* ----------------------------- */
+/* Form
+   ----------------------- */
 
 // Define consistent border, margin, and padding.
 fieldset {
@@ -293,8 +290,8 @@ textarea {
 	vertical-align: top; // 2
 }
 
-/* = Table */
-/* ----------------------------- */
+/* Table
+   ----------------------- */
 
 // Remove most spacing between table cells.
 table {

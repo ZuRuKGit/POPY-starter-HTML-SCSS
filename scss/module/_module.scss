@@ -1,0 +1,16 @@
+/* List inline
+   ----------------------- */
+
+.m-list-inline {
+	padding-left: 0;
+	list-style: none;
+}
+
+.m-list-inline li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.m-list-inline li:last-child {
+	margin-right: 0px;
+}

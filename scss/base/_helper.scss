@@ -1,25 +1,33 @@
-/* ---------------------------------------------------------- */
-/* == Helper */
-/* ---------------------------------------------------------- */
 .clearfix {
 	@include clearfix();
 }
 
-.left { float: left !important }
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	border: 0;
+}
 
-.right { float: right !important }
+.f-left { float: left }
+
+.f-right { float: right }
 
 .center-h {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.text-left { text-align: left !important }
+.align-left { text-align: left }
 
-.text-right { text-align: right !important }
+.align-right { text-align: right }
 
-.text-center { text-align: center !important }
+.align-center { text-align: center }
 
-.text-justify { text-align: justify !important }
+.text-justify { text-align: justify }
 
 .hide { display: none }
