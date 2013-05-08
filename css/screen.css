@@ -90,17 +90,6 @@ dd {
 
 /* Typography
    ----------------------- */
-
-h1, .h1-like,
-h2, .h2-like,
-h3, .h3-like,
-h4, .h4-like,
-h5, .h5-like,
-h6, .h6-like {
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
 h1, .h1-like {
   font-size: 2em;
   line-height: 1.5em;
@@ -143,6 +132,15 @@ h6, .h6-like {
   margin-bottom: 0em;
 }
 
+h1, .h1-like,
+h2, .h2-like,
+h3, .h3-like,
+h4, .h4-like,
+h5, .h5-like,
+h6, .h6-like {
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
 h1:first-child, .h1-like:first-child,
 h2:first-child, .h2-like:first-child,
 h3:first-child, .h3-like:first-child,
@@ -164,7 +162,7 @@ b, strong {
   font-weight: bold;
 }
 
-em, dfn {
+dfn {
   font-style: italic;
 }
 
@@ -421,6 +419,13 @@ table {
 
 .m-list-inline li:last-child {
   margin-right: 0px;
+}
+
+/* list vertical
+   ----------------------- */
+.m-list-vertical {
+  padding-left: 0;
+  list-style: none;
 }
 
 /* ----------------------------------------
