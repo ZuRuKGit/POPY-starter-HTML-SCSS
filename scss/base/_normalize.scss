@@ -109,7 +109,7 @@ h6, .h6-like {
 	line-height: 1.2125em;
 	font-weight: bold;
 	text-rendering: optimizeLegibility; // 1
-	&:fist-child {
+	&:first-child {
 		margin-top: 0;
 	}
 }

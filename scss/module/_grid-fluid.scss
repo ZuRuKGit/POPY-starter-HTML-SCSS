@@ -5,7 +5,7 @@ $container-width: 100%;
 $cols: 12;
 
 // Each side margin of a column
-$col-gutter-width: 1%;
+$col-gutter-width: 2%;
 
 // Column width
 $col-width: ($container-width - ( ($cols - 1) * ( $col-gutter-width * 2 ) ) ) / $cols;
