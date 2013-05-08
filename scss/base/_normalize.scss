@@ -47,7 +47,7 @@ body {
 	position: relative;
 	min-height: 100%;
 	margin: 0;
-	font: 300 #{$font-size-em}/#{$line-height} $font-base;
+	font: #{$font-size-em}/#{$line-height} $font-base;
 	background-color: #fff;
 	-webkit-font-smoothing: antialiased;
 }
@@ -70,48 +70,98 @@ a {
 	}
 }
 
+/* List
+   ----------------------- */
+li ul, li ol {
+	margin: 0;
+}
+
+ul, ol {
+	margin: 0 1.5em 1.5em 0;
+	padding-left: 1.5em;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+dl {
+	margin: 0 0 1.5em 0;
+}
+dl dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 1.5em;
+}
+
 /* Typography
    ----------------------- */
 
 h1, .h1-like {
-	font-size: pxtoem(30, $font-size-px);
+	font-size: 2em;
+	line-height: 1.5em;
+	margin-top: 0.75em;
+	margin-bottom: 0;
 }
 
 h2, .h2-like {
-	font-size: pxtoem(28, $font-size-px);
+	font-size: 1.8333em;
+	line-height: 1.6364em;
+	margin-top: 0.8182em;
+	margin-bottom: 0;
 }
 
-h3, .h3-like {
-	font-size: pxtoem(26, $font-size-px);
+h2, .h2-like {
+	font-size: 1.6667em;
+	line-height: 1.8em;
+	margin-top: 0.9em;
+	margin-bottom: 0em;
 }
 
 h4, .h4-like {
-	font-size: pxtoem(24, $font-size-px);
+	font-size: 1.5em;
+	line-height: 1em;
+	margin-top: 1em;
+	margin-bottom: 0;
 }
 
 h5, .h5-like {
-	font-size: pxtoem(20, $font-size-px);
+	font-size: 1.3333em;
+	line-height: 1.125em;
+	margin-top: 1.125em;
+	margin-bottom: 0;
 }
 
 h6, .h6-like {
-	font-size: pxtoem(18, $font-size-px);
+	font-size: 1.3333em;
+	line-height: 1.125em;
+	margin-top: 1.125em;
+	margin-bottom: 0em;
 }
 
 // 1. Active les ligatures dans les textes en dessous de 20px pour certaines polices
+
 h1, .h1-like,
 h2, .h2-like,
 h3, .h3-like,
 h4, .h4-like,
 h5, .h5-like,
 h6, .h6-like {
-	margin-top: 0.2em;
-	margin-bottom: 0.5em;
-	line-height: 1.2125em;
 	font-weight: bold;
 	text-rendering: optimizeLegibility; // 1
 	&:first-child {
 		margin-top: 0;
 	}
+}
+
+p {
+	margin: 0 0 1.5em 0;
 }
 
 // Address styling not present in IE 8/9, Safari 5, and Chrome.

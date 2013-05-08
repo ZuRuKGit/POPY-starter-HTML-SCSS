@@ -37,7 +37,7 @@ body {
   position: relative;
   min-height: 100%;
   margin: 0;
-  font: 300 1.6em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.4em/1.5 "Helvetica", Arial, sans-serif;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,31 +57,39 @@ a:active, a:hover {
   outline: 0;
 }
 
+/* List
+   ----------------------- */
+li ul, li ol {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0 1.5em 1.5em 0;
+  padding-left: 1.5em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+dl {
+  margin: 0 0 1.5em 0;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
 /* Typography
    ----------------------- */
-h1, .h1-like {
-  font-size: 1.875em;
-}
-
-h2, .h2-like {
-  font-size: 1.75em;
-}
-
-h3, .h3-like {
-  font-size: 1.625em;
-}
-
-h4, .h4-like {
-  font-size: 1.5em;
-}
-
-h5, .h5-like {
-  font-size: 1.25em;
-}
-
-h6, .h6-like {
-  font-size: 1.125em;
-}
 
 h1, .h1-like,
 h2, .h2-like,
@@ -89,12 +97,52 @@ h3, .h3-like,
 h4, .h4-like,
 h5, .h5-like,
 h6, .h6-like {
-  margin-top: 0.2em;
-  margin-bottom: 0.5em;
-  line-height: 1.2125em;
-  font-weight: bold;
+  font-weight: normal;
   text-rendering: optimizeLegibility;
 }
+
+h1, .h1-like {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0;
+}
+
+h2, .h2-like {
+  font-size: 1.8333em;
+  line-height: 1.6364em;
+  margin-top: 0.8182em;
+  margin-bottom: 0;
+}
+
+h2, .h2-like {
+  font-size: 1.6667em;
+  line-height: 1.8em;
+  margin-top: 0.9em;
+  margin-bottom: 0em;
+}
+
+h4, .h4-like {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+h5, .h5-like {
+  font-size: 1.3333em;
+  line-height: 1.125em;
+  margin-top: 1.125em;
+  margin-bottom: 0;
+}
+
+h6, .h6-like {
+  font-size: 1.3333em;
+  line-height: 1.125em;
+  margin-top: 1.125em;
+  margin-bottom: 0em;
+}
+
 h1:first-child, .h1-like:first-child,
 h2:first-child, .h2-like:first-child,
 h3:first-child, .h3-like:first-child,
@@ -102,6 +150,10 @@ h4:first-child, .h4-like:first-child,
 h5:first-child, .h5-like:first-child,
 h6:first-child, .h6-like:first-child {
   margin-top: 0;
+}
+
+p {
+  margin: 0 0 1.5em 0;
 }
 
 abbr[title] {
@@ -112,7 +164,7 @@ b, strong {
   font-weight: bold;
 }
 
-dfn {
+em, dfn {
   font-style: italic;
 }
 
