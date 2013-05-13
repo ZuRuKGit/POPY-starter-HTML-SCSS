@@ -7,7 +7,7 @@
 }
 
 .m-list-inline li {
-	display: inline-block;
+	@include inline-block;
 	margin-right: 10px;
 }
 

@@ -416,6 +416,10 @@ table {
   display: inline-block;
   margin-right: 10px;
 }
+.lt-ie8 .m-list-inline li {
+  display: inline;
+  zoom: 1;
+}
 
 .m-list-inline li:last-child {
   margin-right: 0px;
