@@ -1,24 +1,24 @@
 /* List inline
    ----------------------- */
 
-.m-list-inline {
+.list-inline {
 	padding-left: 0;
 	list-style: none;
 }
 
-.m-list-inline li {
+.list-inline li {
 	@include inline-block;
 	margin-right: 10px;
 }
 
-.m-list-inline li:last-child {
+.list-inline li:last-child {
 	margin-right: 0px;
 }
 
 /* list vertical
    ----------------------- */
 
-.m-list-vertical {
+.list-vertical-reset {
 	padding-left: 0;
 	list-style: none;
 }

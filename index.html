@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js is-ie7 lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js is-ie8 lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
 	<meta charset="utf-8">
 	<title></title>
@@ -11,28 +12,33 @@
 	<link rel="stylesheet" href="css/screen.css">
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
 
-	<header id="header" class="wrapper">
-		<nav id="nav">
+<body role="document">
+
+	<ul id="skip-nav" class="hide">
+		<li><a href="#nav">menu</a></li>
+		<li><a href="#content">contenu</a></li>
+	</ul>
+
+	<header id="header" class="wrapper" role="banner">
+		<nav id="nav" role="navigation">
 		</nav>
 	</header>
 
 	<div id="content" class="wrapper row">
-		<section id="section" class="col-8">
-
-		</section>
-		<aside id="aside" class="col-4">
-
+		<div id="main" class="col-8" role="main">
+		</div>
+		<aside id="aside" class="col-4" role="complementary">
 		</aside>
 	</div>
 
-	<footer id="footer" class="wrapper">
-
+	<footer id="footer" class="wrapper" role="contentinfo">
 	</footer>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="js/main.js"></script>
+
 </body>
+
 </html>
