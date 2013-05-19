@@ -1,0 +1,35 @@
+/* Button
+   ----------------------- */
+
+.btn {
+	@include inline-block();
+	padding: .25em 1em;
+	vertical-align: middle;
+	cursor: pointer;
+	text-decoration: none;
+	color: #212121;
+	background: #ccc;
+	@include transition();
+	@include border-radius(4px);
+
+
+	&:hover, &:focus {
+		color: #ccc;
+		background: #212121;
+	}
+
+	&:active {
+		color: white;
+		position: relative;
+		top: 1px;
+	}
+
+	&.small {
+		font-size: .75em;
+	}
+
+	&.big {
+		font-size: 1.25em;
+	}
+
+}
