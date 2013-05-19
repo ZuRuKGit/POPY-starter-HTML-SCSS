@@ -7,7 +7,15 @@
    Base
    ---------------------------------------- */
 
-@import "base/_normalize.scss";
+@import "base/_html5.scss";
+@import "base/_base.scss";
+@import "base/_link.scss";
+@import "base/_typography.scss";
+@import "base/_list.scss";
+@import "base/_embedded.scss";
+@import "base/_figure.scss";
+@import "base/_form.scss";
+@import "base/_table.scss";
 
 /* ----------------------------------------
    Module

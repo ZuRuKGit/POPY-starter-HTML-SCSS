@@ -3,7 +3,7 @@
 Projet: POPY - Starter intégration
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
 Version: 1.2
-Date: 18 mai 2013
+Date: 19 mai 2013
 */
 /* ----------------------------------------
    Base
@@ -55,37 +55,6 @@ a:focus {
 }
 a:active, a:hover {
   outline: 0;
-}
-
-/* List
-   ----------------------- */
-li ul, li ol {
-  margin: 0;
-}
-
-ul, ol {
-  margin: 0 1.5em 1.5em 0;
-  padding-left: 1.5em;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-ol {
-  list-style-type: decimal;
-}
-
-dl {
-  margin: 0 0 1.5em 0;
-}
-
-dl dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-left: 1.5em;
 }
 
 /* Typography
@@ -209,6 +178,37 @@ sub {
   bottom: -0.25em;
 }
 
+/* List
+   ----------------------- */
+li ul, li ol {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0 1.5em 1.5em 0;
+  padding-left: 1.5em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+dl {
+  margin: 0 0 1.5em 0;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
 /* Embedded content
     ----------------------- */
 img {
@@ -234,6 +234,10 @@ img, input[type=image] {
 
 svg:not(:root) {
   overflow: hidden;
+}
+
+figure {
+  margin: 0;
 }
 
 /* Figure
