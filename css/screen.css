@@ -2,8 +2,8 @@
 /*
 Projet: POPY - Starter intégration
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
-Version: 1.2
-Date: 19 mai 2013
+Version: 1.3
+Date: 27 mai 2013
 */
 /* ----------------------------------------
    Base
@@ -11,7 +11,7 @@ Date: 19 mai 2013
 /* Html 5 definition
    ----------------------- */
 article, aside, details, figcaption, figure, footer,
-header, hgroup, main, nav, section, summary {
+header, main, nav, section, summary {
   display: block;
 }
 
@@ -39,7 +39,17 @@ body {
   margin: 0;
   font: 1.4em/1.5 "Helvetica", Arial, sans-serif;
   background-color: #fff;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* Link
@@ -136,9 +146,12 @@ dfn {
 }
 
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 mark {
@@ -224,6 +237,10 @@ video, img, object {
   height: auto;
 }
 
+object, embed {
+  height: 100%;
+}
+
 iframe {
   border: 0;
 }
@@ -249,7 +266,7 @@ figure {
 /* Form
    ----------------------- */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -333,175 +350,137 @@ table {
   border-spacing: 0;
 }
 
+/* Selection
+   ----------------------- */
+::-webkit-selection {
+  color: white;
+  background: #0099ff;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: white;
+  background: #0099ff;
+  text-shadow: none;
+}
+
+::selection {
+  color: white;
+  background: #0099ff;
+  text-shadow: none;
+}
+
 /* ----------------------------------------
    Module
    ---------------------------------------- */
+.test {
+  width: 8%;
+}
+
 /* Grid
    ----------------------- */
 .wrapper {
-  max-width: 940px;
+  max-width: 1000px;
   min-width: 320px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.row {
+  margin-left: -2%;
+}
+
 [class*=col-] {
   float: left;
-  margin-left: 1.06383%;
-  margin-right: 1.06383%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.row > [class*="col-"]:first-child {
-  margin-left: 0;
-}
-
-.row > [class*="col-"]:last-child {
-  margin-right: 0;
+  margin-left: 2%;
 }
 
 /* Column */
 .col-1 {
-  width: 6.38298%;
+  width: 8%;
 }
 
 .col-2 {
-  width: 14.89362%;
+  width: 18%;
 }
 
 .col-3 {
-  width: 23.40426%;
+  width: 28%;
 }
 
 .col-4 {
-  width: 31.91489%;
+  width: 38%;
 }
 
 .col-5 {
-  width: 40.42553%;
+  width: 48%;
 }
 
 .col-6 {
-  width: 48.93617%;
+  width: 58%;
 }
 
 .col-7 {
-  width: 57.44681%;
+  width: 68%;
 }
 
 .col-8 {
-  width: 65.95745%;
+  width: 78%;
 }
 
 .col-9 {
-  width: 74.46809%;
+  width: 88%;
 }
 
 .col-10 {
-  width: 82.97872%;
-}
-
-.col-11 {
-  width: 91.48936%;
-}
-
-.col-12 {
-  width: 100%;
+  width: 98%;
 }
 
 /* Push left column */
 .offset-col-1 {
-  margin-left: 9.57447%;
-}
-
-.row > .offset-col-1:first-child {
-  margin-left: 8.51064%;
+  margin-left: 12%;
 }
 
 .offset-col-2 {
-  margin-left: 19.14894%;
-}
-
-.row > .offset-col-2:first-child {
-  margin-left: 17.02128%;
+  margin-left: 22%;
 }
 
 .offset-col-3 {
-  margin-left: 28.7234%;
-}
-
-.row > .offset-col-3:first-child {
-  margin-left: 25.53191%;
+  margin-left: 32%;
 }
 
 .offset-col-4 {
-  margin-left: 38.29787%;
-}
-
-.row > .offset-col-4:first-child {
-  margin-left: 34.04255%;
+  margin-left: 42%;
 }
 
 .offset-col-5 {
-  margin-left: 47.87234%;
-}
-
-.row > .offset-col-5:first-child {
-  margin-left: 42.55319%;
+  margin-left: 52%;
 }
 
 .offset-col-6 {
-  margin-left: 57.44681%;
-}
-
-.row > .offset-col-6:first-child {
-  margin-left: 51.06383%;
+  margin-left: 62%;
 }
 
 .offset-col-7 {
-  margin-left: 67.02128%;
-}
-
-.row > .offset-col-7:first-child {
-  margin-left: 59.57447%;
+  margin-left: 72%;
 }
 
 .offset-col-8 {
-  margin-left: 76.59574%;
+  margin-left: 82%;
 }
 
-.row > .offset-col-8:first-child {
-  margin-left: 68.08511%;
-}
-
-.offset-col-9 {
-  margin-left: 86.17021%;
-}
-
-.row > .offset-col-9:first-child {
-  margin-left: 76.59574%;
-}
-
-.offset-col-10 {
-  margin-left: 95.74468%;
-}
-
-.row > .offset-col-10:first-child {
-  margin-left: 85.10638%;
-}
-
-/* List inline
+/* list
    ----------------------- */
-.list-inline {
+.list-reset, .list-inline {
   padding-left: 0;
   list-style: none;
 }
 
+/* List inline */
 .list-inline li {
   display: inline-block;
   margin-right: 10px;
+  vertical-align: middle;
 }
 .lt-ie8 .list-inline li {
   display: inline;
@@ -512,23 +491,16 @@ table {
   margin-right: 0px;
 }
 
-/* list vertical
-   ----------------------- */
-.list-vertical-reset {
-  padding-left: 0;
-  list-style: none;
-}
-
 /* Button
    ----------------------- */
 .btn {
   display: inline-block;
-  padding: 0.25em 1em;
+  padding: .25em 1em;
   vertical-align: middle;
   cursor: pointer;
   text-decoration: none;
   color: #212121;
-  background: #ccc;
+  background: #555555;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -541,12 +513,11 @@ table {
   display: inline;
   zoom: 1;
 }
-.btn:hover, .btn:focus {
-  color: #ccc;
-  background: #212121;
+.btn:hover, .btn:focus, .btn:active {
+  color: #cccccc;
+  background: white;
 }
 .btn:active {
-  color: white;
   position: relative;
   top: 1px;
 }
@@ -585,17 +556,20 @@ table {
   border: 0;
 }
 
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
 .f-left {
   float: left;
 }
 
 .f-right {
   float: right;
-}
-
-.center-h {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .align-left {
@@ -618,26 +592,41 @@ table {
   display: none;
 }
 
+.hidden-desktop, .visible-tablet, .visible-phone {
+  display: none;
+}
+
 /* ----------------------------------------
    RWD
    ---------------------------------------- */
-/* Big screen
-   ----------------------- */
-@media only screen and (min-width: 1280px) {
-  /* Declarations */
-}
-/* Normal screen
-   ----------------------- */
-@media only screen and (max-width: 1280px) and (min-width: 768px) {
-  /* Declarations */
-}
-/* Medium screen
+/* Medium screen (tablet like)
    ----------------------- */
 @media only screen and (max-width: 768px) {
-  /* Declarations */
+  .hidden-desktop {
+    display: inherit;
+  }
+
+  .visible-desktop {
+    display: none;
+  }
 }
-/* Small screen
+@media only screen and (max-width: 768px) and (min-width: 640px) {
+  .visible-tablet {
+    display: inherit;
+  }
+
+  .hidden-tablet {
+    display: none;
+  }
+}
+/* Small screen (smartphone like)
    ----------------------- */
 @media only screen and (max-width: 640px) {
-  /* Declarations */
+  .visible-phone {
+    display: inherit;
+  }
+
+  .hidden-phone {
+    display: none;
+  }
 }

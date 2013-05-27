@@ -7,19 +7,18 @@
 	vertical-align: middle;
 	cursor: pointer;
 	text-decoration: none;
-	color: #212121;
-	background: #ccc;
+	color: $clr-btn;
+	background: $bkg-btn;
 	@include transition();
 	@include border-radius(4px);
 
 
-	&:hover, &:focus {
-		color: #ccc;
-		background: #212121;
+	&:hover, &:focus, &:active {
+		color: $clr-btn-hover;
+		background: $bkg-btn-hover;
 	}
 
 	&:active {
-		color: white;
 		position: relative;
 		top: 1px;
 	}

@@ -1,38 +1,26 @@
-// Max width of wrapper
-$wrapper-max-width: 940px;
-
-// Min width of wrapper
-$wrapper-min-width: 320px;
-
-// Number of columns
-$cols: 12;
-
-// Gutter width
-$gutter-width: 20px;
-
 // Total width of content
 $container-width: 100%;
 
 // Each side margin of a column
-$col-gutter-width: percentage( ($gutter-width/2) / $wrapper-max-width);
+$col-gutter-width: percentage( ($gutter-width) / $wrapper-max-width);
 
 // Column width
-$col-width: ($container-width - ( ($cols - 1) * ( $col-gutter-width * 2 ) ) ) / $cols;
+$col-width: ($container-width - ( ($cols ) * ( $col-gutter-width) ) ) / $cols;
 
 // External width of a column, counting each side of the gutter
 $col-outer-width: $col-width + $col-gutter-width * 2;
 
+.test  {
+	width: $col-width;
+}
+
 // Mixin
 @mixin col($cols) {
-	width: $cols * $col-width + ($col-gutter-width * 2) * ($cols - 1);
+	width: ($cols * $col-width) + (($cols - 1) * ($col-gutter-width)) ;
 }
 
 @mixin offset-col($cols) {
-	margin-left: $cols * $col-width + ($col-gutter-width * 3) * $cols;
-}
-
-@mixin offset-col-first-child($cols) {
-	margin-left: $cols * $col-width + ($col-gutter-width * 2) * $cols;
+	margin-left: ($cols * $col-width) + (($cols + 1) * $col-gutter-width);
 }
 
 /* Grid
@@ -47,23 +35,14 @@ $col-outer-width: $col-width + $col-gutter-width * 2;
 
 .row {
 	@extend .clearfix;
+	margin-left: -$col-gutter-width;
 }
 
 [class*=col-] {
 	float: left;
 	margin: {
-		left: $col-gutter-width;
-		right: $col-gutter-width;
+		left: $col-gutter-width ;
 	}
-	@include box-sizing(border-box);
-}
-
-.row > [class*="col-"]:first-child {
-	margin-left: 0;
-}
-
-.row > [class*="col-"]:last-child {
-	margin-right: 0;
 }
 
 /* Column */
@@ -79,8 +58,5 @@ $col-outer-width: $col-width + $col-gutter-width * 2;
 @for $i from 1 through ($cols - 2) {
 	.offset-col-#{$i} {
 		@include offset-col($i);
-	}
-	.row >.offset-col-#{$i}:first-child {
-		@include offset-col-first-child($i);
 	}
 }

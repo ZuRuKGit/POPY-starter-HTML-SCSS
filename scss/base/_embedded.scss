@@ -4,14 +4,14 @@
 // Remove border when inside `a` element in IE 8/9.
 img { border: 0 }
 
-.lt-ie8 img {
-	-ms-interpolation-mode: bicubic;
-}
+.lt-ie8 img { -ms-interpolation-mode: bicubic }
 
 video,img,object {
 	max-width: 100%;
 	height:auto;
 }
+
+object, embed { height: 100% }
 
 iframe { border:0 }
 

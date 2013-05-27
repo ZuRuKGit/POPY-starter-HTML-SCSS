@@ -1,28 +1,20 @@
-/* Big screen
-   ----------------------- */
-
-@media only screen and (min-width:1280px) {
-	/* Declarations */
-}
-
-/* Normal screen
-   ----------------------- */
-
-@media only screen and (max-width:1280px) and (min-width:768px) {
-	/* Declarations */
-}
-
-/* Medium screen
+/* Medium screen (tablet like)
    ----------------------- */
 
 @media only screen and (max-width:768px) {
-	/* Declarations */
+	.hidden-desktop { display: inherit }
+	.visible-desktop { display: none }
 }
 
+@media only screen and (max-width:768px) and (min-width:640px) {
+	.visible-tablet { display: inherit }
+	.hidden-tablet { display: none }
+}
 
-/* Small screen
+/* Small screen (smartphone like)
    ----------------------- */
 
 @media only screen and (max-width:640px) {
-	/* Declarations */
+	.visible-phone { display: inherit }
+	.hidden-phone { display: none }
 }

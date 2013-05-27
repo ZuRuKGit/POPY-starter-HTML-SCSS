@@ -16,12 +16,19 @@ html {
 	height: 100%;
 }
 
-// Remove default margin.
 body {
 	position: relative;
 	min-height: 100%;
 	margin: 0;
 	font: #{$font-size-em}/#{$line-height} $font-base;
 	background-color: #fff;
+}
+
+*,
+*:after,
+*:before {
+	@include box-sizing(border-box);
 	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }

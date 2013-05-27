@@ -31,9 +31,8 @@
 	}
 }
 
-// ----------------------------------------------------------
-// == Opacity
-// ----------------------------------------------------------
+// = Opacity
+// -----------------------------
 @mixin opacity($opacity) {
 	filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
 	opacity: $opacity;
@@ -50,6 +49,19 @@
 	}
 	&:-ms-input-placeholder {
 		color: $color;
+	}
+}
+
+// = Selection
+// -----------------------------
+$prefixes: ("-webkit-","-moz-", "");
+@mixin selection($color, $background) {
+	@each $prefix in $prefixes {
+		::#{$prefix}selection {
+			color: $color;
+			background: $background;
+			text-shadow:none;
+		}
 	}
 }
 
