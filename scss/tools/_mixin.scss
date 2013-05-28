@@ -6,6 +6,7 @@
 // -----------------------------
 @mixin inline-block ($haslayout : true){
 	display: inline-block;
+	vertical-align: middle;
 	@if $haslayout == true {
 		.lt-ie8 & {
 			display: inline;
@@ -184,4 +185,22 @@ $prefix-for-spec:      true !default;
 @mixin box-sizing ($box : border-box) {
 	//  content-box | border-box | inherit
 	@include prefixer(box-sizing, $box, webkit moz spec);
+}
+
+// = Filter
+// -----------------------------
+@mixin filter (
+	$filter-1,
+	$filter-2 : false,
+	$filter-3 : false,
+	$filter-4 : false,
+	$filter-5 : false,
+	$filter-6 : false,
+	$filter-7 : false,
+	$filter-8 : false,
+	$filter-9 : false,
+	$filter-10: false
+	) {
+	$filter : compact($filter-1, $filter-2, $filter-3, $filter-4, $filter-5, $filter-6, $filter-7, $filter-8, $filter-9, $filter-10);
+	@include prefixer(filter, $filter, webkit moz spec);
 }

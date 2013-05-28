@@ -479,6 +479,7 @@ table {
 /* List inline */
 .list-inline li {
   display: inline-block;
+  vertical-align: middle;
   margin-right: 10px;
   vertical-align: middle;
 }
@@ -495,6 +496,7 @@ table {
    ----------------------- */
 .btn {
   display: inline-block;
+  vertical-align: middle;
   padding: .25em 1em;
   vertical-align: middle;
   cursor: pointer;
