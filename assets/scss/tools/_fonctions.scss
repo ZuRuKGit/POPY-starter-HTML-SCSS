@@ -1,0 +1,25 @@
+// ----------------------------------------------------------
+// == Convert PX to EM
+// ----------------------------------------------------------
+@function em($pxval, $font-size-px) {
+    @if not unitless($pxval) {
+        $pxval: strip-units($pxval);
+    }
+    @if not unitless($font-size-px) {
+        $font-size-px: strip-units($font-size-px);
+    }
+    @return ($pxval / $font-size-px) * 1em;
+}
+
+// ----------------------------------------------------------
+// == Tint & shade
+// ----------------------------------------------------------
+// Add percentage of white to a color
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+    @return mix(black, $color, $percent);
+}

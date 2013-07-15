@@ -1,0 +1,280 @@
+// ----------------------------------------------------------
+// == Base
+// ----------------------------------------------------------
+
+// = Inline-block
+// -----------------------------
+//@include inline-block()
+@mixin inline-block ($v-align: middle, $haslayout : true){
+    display: inline-block;
+    vertical-align: $v-align;
+    @if $haslayout == true {
+        .lt-ie8 & {
+            display: inline;
+            zoom: 1;
+        }
+    }
+}
+
+// = Clearfix
+// -----------------------------
+//@include clearfix();
+@mixin clearfix ($haslayout : true) {
+    @if $haslayout == true {
+        .lt-ie8 & {
+            zoom: 1;
+        }
+    }
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both
+    }
+}
+
+// = Opacity
+// -----------------------------
+//@include opacity();
+@mixin opacity($opacity) {
+    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+    opacity: $opacity;
+}
+
+// = Placeholder
+// -----------------------------
+@mixin placeholder($color : $color-mixin-placeholder) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+// = Selection
+// -----------------------------
+$prefixes: ("-webkit-","-moz-", "");
+@mixin selection($color, $background) {
+    @each $prefix in $prefixes {
+        ::#{$prefix}selection {
+            color: $color;
+            background: $background;
+            text-shadow:none;
+        }
+    }
+}
+
+// = Position
+// -----------------------------
+//@include position(relative, 0px 0 0 100px);
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+    @if type-of($position) == list {
+        $coordinates: $position;
+        $position: relative;
+    }
+    $top: nth($coordinates, 1);
+    $right: nth($coordinates, 2);
+    $bottom: nth($coordinates, 3);
+    $left: nth($coordinates, 4);
+    position: $position;
+    @if $top == auto {
+        top: $top;
+    }
+    @else if not(unitless($top)) {
+        top: $top;
+    }
+    @if $right == auto {
+        right: $right;
+    }
+    @else if not(unitless($right)) {
+        right: $right;
+    }
+    @if $bottom == auto {
+        bottom: $bottom;
+    }
+    @else if not(unitless($bottom)) {
+        bottom: $bottom;
+    }
+    @if $left == auto {
+        left: $left;
+    }
+    @else if not(unitless($left)) {
+        left: $left;
+    }
+}
+
+// = Triangle
+// -----------------------------
+//@include triangle(12px, gray, down);
+@mixin triangle ($size, $color, $direction) {
+    height: 0;
+    width: 0;
+    @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+        border-color: transparent;
+        border-style: solid;
+        border-width: $size / 2;
+        @if $direction == up {
+            border-bottom-color: $color;
+        } @else if $direction == right {
+            border-left-color:   $color;
+        } @else if $direction == down {
+            border-top-color:    $color;
+        } @else if $direction == left {
+            border-right-color:  $color;
+        }
+    }
+    @else if ($direction == up-right) or ($direction == up-left) {
+        border-top: $size solid $color;
+        @if $direction == up-right {
+            border-left:  $size solid transparent;
+        } @else if $direction == up-left {
+            border-right: $size solid transparent;
+        }
+    }
+    @else if ($direction == down-right) or ($direction == down-left) {
+        border-bottom: $size solid $color;
+        @if $direction == down-right {
+            border-left:  $size solid transparent;
+        } @else if $direction == down-left {
+            border-right: $size solid transparent;
+        }
+    }
+}
+
+// ----------------------------------------------------------
+// == Linear Gradient
+// ----------------------------------------------------------
+//@include linear-gradient(#1e5799, #2989d8);
+//@include linear-gradient(to top, #8fdce5, #3dc3d1);
+//@include linear-gradient(to top, #8fdce5, #3dc3d1, $fallback: red);
+//@include linear-gradient(50deg, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+@mixin linear-gradient($pos, $G1, $G2: null,
+                       $G3: null, $G4: null,
+                       $G5: null, $G6: null,
+                       $G7: null, $G8: null,
+                       $G9: null, $G10: null,
+                       $fallback: null) {
+  // Detect what type of value exists in $pos
+  $pos-type: type-of(nth($pos, 1));
+  $pos-spec: null;
+  $pos-degree: null;
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  {
+    $G10: $G9; $G9: $G8; $G8: $G7; $G7: $G6; $G6: $G5;
+     $G5: $G4; $G4: $G3; $G3: $G2; $G2: $G1; $G1: $pos;
+     $pos: null;
+  }
+
+  @if $pos {
+    $positions: _linear-positions-parser($pos);
+    $pos-degree: nth($positions, 1);
+    $pos-spec:   nth($positions, 2);
+  }
+
+  $full: $G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10;
+
+  // Set $G1 as the default fallback color
+  $fallback-color: nth($G1, 1);
+
+  // If $fallback is a color use that color as the fallback color
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  background-color: $fallback-color;
+  background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
+  background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
+}
+
+// ----------------------------------------------------------
+// == Font face
+// ----------------------------------------------------------
+// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+// @include font-face(SourceSansPro, '/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular', normal);
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+           font-url('#{$file-path}.woff')                format('woff'),
+           font-url('#{$file-path}.ttf')                 format('truetype'),
+           font-url('#{$file-path}.svg##{$font-family}') format('svg');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+           url('#{$file-path}.woff')                     format('woff'),
+           url('#{$file-path}.ttf')                      format('truetype'),
+           url('#{$file-path}.svg##{$font-family}')      format('svg');
+    }
+  }
+}
+
+// ----------------------------------------------------------
+// == CSS3
+// ----------------------------------------------------------
+
+// = Border-radius
+// -----------------------------
+@mixin border-radius($radius : 5px) {
+    @include prefixer(border-radius, $radius, moz spec)
+}
+
+@mixin border-top-radius($radius : 5px) {
+    @include prefixer(border-top-left-radius, $radius, moz spec);
+    @include prefixer(border-top-right-radius, $radius, moz spec);
+}
+
+@mixin border-bottom-radius($radius : 5px) {
+    @include prefixer(border-bottom-left-radius, $radius, moz spec);
+    @include prefixer(border-bottom-right-radius, $radius, moz spec);
+}
+
+@mixin border-left-radius($radius : 5px) {
+    @include prefixer(border-top-left-radius, $radius, moz spec);
+    @include prefixer(border-bottom-left-radius, $radius, moz spec);
+}
+
+@mixin border-right-radius($radius : 5px) {
+    @include prefixer(border-top-right-radius, $radius, moz spec);
+    @include prefixer(border-bottom-right-radius, $radius, moz spec);
+}
+
+// = Transition
+// -----------------------------
+@mixin transition ($transition : all .3s ease-in-out) {
+    @include prefixer(transition, $transition, webkit moz ms o spec);
+}
+
+// = Box-sizing
+// -----------------------------
+@mixin box-sizing ($box : border-box) {
+    //  content-box | border-box | inherit
+    @include prefixer(box-sizing, $box, webkit moz spec);
+}
+
+// = Filter
+// -----------------------------
+@mixin filter (
+    $filter-1,
+    $filter-2 : false,
+    $filter-3 : false,
+    $filter-4 : false,
+    $filter-5 : false,
+    $filter-6 : false,
+    $filter-7 : false,
+    $filter-8 : false,
+    $filter-9 : false,
+    $filter-10: false
+    ) {
+    $filter : compact($filter-1, $filter-2, $filter-3, $filter-4, $filter-5, $filter-6, $filter-7, $filter-8, $filter-9, $filter-10);
+    @include prefixer(filter, $filter, webkit moz spec);
+}

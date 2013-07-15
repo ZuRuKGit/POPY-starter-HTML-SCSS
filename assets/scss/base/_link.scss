@@ -1,0 +1,17 @@
+/* Link
+    ----------------------- */
+
+a {
+    color: $color-link;
+    &:hover {
+        color: $color-link-hover;
+    }
+    // Address `outline` inconsistency between Chrome and other browsers.
+    &:focus {
+        outline: thin dotted;
+    }
+    // Improve readability when focused and also mouse hovered in all browsers.
+    &:active, &:hover {
+        outline: 0;
+    }
+}

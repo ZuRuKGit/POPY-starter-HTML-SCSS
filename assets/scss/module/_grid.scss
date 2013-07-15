@@ -1,0 +1,58 @@
+// Taille de .row
+$row-width: 100% !default;
+@if $grid-fluid == true {
+    $row-width: 100%;
+} @else {
+    $row-width: $wrapper-max-width;
+}
+
+// Column width
+$col-width: $row-width / $cols;
+
+// Mixin
+@mixin col($cols) {
+    width: $col-width * $cols;
+}
+
+@mixin offset-col($cols) {
+    margin-left: $cols * $col-width;
+}
+
+/* Grid
+   ----------------------- */
+.wrapper {
+    @if $grid-fluid == true {
+        max-width: $wrapper-max-width;
+        min-width: $wrapper-min-width;
+    } @else {
+        width: $wrapper-max-width;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    @extend .clearfix;
+}
+
+[class*=col-] {
+    float: left;
+    padding-left: $gutter-width / 2;
+    padding-right: $gutter-width / 2;
+}
+
+/* Column */
+
+@for $i from 1 through ($cols) {
+    .col-#{$i} {
+        @include col($i);
+    }
+}
+
+/* Push left column */
+
+@for $i from 1 through ($cols - 1) {
+    .offset-col-#{$i} {
+        @include offset-col($i);
+    }
+}
