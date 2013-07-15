@@ -61,10 +61,16 @@ $color-selection: $primary-color;
 
 // = Button
 // -----------------------------
-$bkg-color-btn:       $primary-color;
-$bkg-color-btn-hover: darken($bkg-color-btn, 15%);
-$color-btn:           $white;
-$color-btn-hover:     $white;
+$bkg-color-button-primary: $primary-color;
+$bkg-color-button-secondary: $grey-light;
+
+// = Message
+// -----------------------------
+
+$color-message-error: #b94a48;
+$color-message-ok:    #468847;
+$color-message-warn:  #c09853;
+$color-message-info:  #3a87ad;
 
 // ----------------------------------------------------------
 // == Grid
@@ -72,7 +78,7 @@ $color-btn-hover:     $white;
 
 // Choix de grille fluide ou fixe
 // Mettre true pour grille fluide
-$grid-fluid: false !default;
+$grid-fluid: true !default;
 
 // Taille maximale du wrapper en px
 $wrapper-max-width: 960px;

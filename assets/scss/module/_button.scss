@@ -1,38 +1,39 @@
 /* Button
    ----------------------- */
 
-.btn {
-	@include inline-block();
-	padding: 0 1em;
-	margin: 0 5px 0 0;
-	height: 2em;
-	line-height: 2em;
-	vertical-align: middle;
-	cursor: pointer;
-	text-decoration: none;
-	@include transition();
-	@include border-radius(4px);
+%button {
+    @include inline-block();
+    padding: 0 1.5em;
+    margin: 0 5px 0 0;
+    height: 2.5em;
+    line-height: 2.5em;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    @include transition();
+    @include border-radius();
+    &.small {
+        font-size: .75em;
+    }
+    &.big {
+        font-size: 1.25em;
+    }
+}
 
-	&.primary {
-		color: $color-btn;
-		background: $bkg-color-btn;
-		&:hover, &:focus, &:active {
-			color: $color-btn-hover;
-			background: $bkg-color-btn-hover;
-		}
-	}
+@mixin button($color, $bkg-color-btn, $color-btn-hover, $bkg-color-btn-hover ) {
+    @extend %button;
+    color: $color;
+    background: $bkg-color-btn;
+    &:hover, &:focus {
+        color: $color-btn-hover;
+        background: $bkg-color-btn-hover;
+    }
+}
 
-	&:active {
-		position: relative;
-		top: 1px;
-	}
+.button-primary {
+    @include button($white, $bkg-color-button-primary, $white, darken($bkg-color-button-primary, 20%));
+}
 
-	&.small {
-		font-size: .75em;
-	}
-
-	&.big {
-		font-size: 1.25em;
-	}
-
+.button-secondary {
+    @include button($white, $bkg-color-button-secondary, $white, darken($bkg-color-button-secondary, 20%));
 }
