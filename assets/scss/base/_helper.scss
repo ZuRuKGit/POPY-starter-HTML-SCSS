@@ -25,9 +25,9 @@
 // m,p = margin,padding
 // a,t,r,b,l = all,top,right,bottom,left
 .mt-0 { margin-top: 0 !important; }
-.mt-large { margin-top: 20px; }
+.mt-large { margin-top: $spacing; }
 .mb-0 { margin-bottom: 0 !important; }
-.mb-large { margin-bottom: 20px; }
+.mb-large { margin-bottom: $spacing; }
 
 .left { float: left; }
 

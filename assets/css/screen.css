@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 1em 0;
+  margin: 0 0 1.5em 0;
   font-size: 1em;
   font-weight: normal;
 }
@@ -89,7 +89,7 @@ dfn {
 hr {
   display: block;
   height: 1px;
-  margin: 1em 0;
+  margin: 1.5em 0;
   padding: 0;
   border: 0;
   border-top: 1px solid #ccc;
@@ -502,16 +502,43 @@ table {
   font-size: 1.25em;
 }
 
+/* Message
+   ----------------------- */
+.message-error, .message-ok, .message-warn, .message-info {
+  margin: 1.5em 0;
+  padding: 8px;
+  border: 1px solid;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.message-error {
+  color: #b94a48;
+  background: #efd5d4;
+  border-color: #d5929c;
+}
+
+.message-ok {
+  color: #468847;
+  background: #b6dab7;
+  border-color: #83ba7a;
+}
+
+.message-warn {
+  color: #c09853;
+  background: #f4ede1;
+  border-color: #dbba9e;
+}
+
+.message-info {
+  color: #3a87ad;
+  background: #bfdcea;
+  border-color: #7ac4d3;
+}
+
 /* ----------------------------------------
    No module
    ---------------------------------------- */
-.test {
-  height: 200px;
-  background-color: #1e5799;
-  background-image: -webkit-linear-gradient(#1e5799, #2989d8);
-  background-image: linear-gradient(#1e5799, #2989d8);
-}
-
 /* ----------------------------------------
    Helper
    ---------------------------------------- */
@@ -550,7 +577,7 @@ table {
 }
 
 .mt-large {
-  margin-top: 20px;
+  margin-top: 1.5em;
 }
 
 .mb-0 {
@@ -558,7 +585,7 @@ table {
 }
 
 .mb-large {
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
 }
 
 .left {

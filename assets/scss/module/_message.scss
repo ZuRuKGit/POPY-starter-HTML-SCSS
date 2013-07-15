@@ -1,0 +1,37 @@
+/* Message
+   ----------------------- */
+
+%message {
+    margin: $spacing 0;
+    padding: 8px;
+    border: 1px solid;
+    @include border-radius();
+}
+.message-error {
+    @extend %message;
+    $color: #b94a48;
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten(adjust-hue($color, -10), 20%);
+}
+.message-ok {
+    @extend %message;
+    $color: #468847;
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten(adjust-hue($color, -10), 20%);
+}
+.message-warn {
+    @extend %message;
+    $color: #c09853;
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten(adjust-hue($color, -10), 20%);
+}
+.message-info {
+    @extend %message;
+    $color: #3a87ad;
+    color: $color;
+    background: lighten($color, 38%);
+    border-color: lighten(adjust-hue($color, -10), 20%);
+}
