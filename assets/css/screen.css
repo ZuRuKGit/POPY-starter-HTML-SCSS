@@ -281,8 +281,8 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
   width: 100%;
   border: 1px solid #ededed;
   outline: 0;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 input[type="text"]:hover, input[type="text"]:focus, input[type="password"]:hover, input[type="password"]:focus, input[type="search"]:hover, input[type="search"]:focus, input[type="email"]:hover, input[type="email"]:focus, textarea:hover, textarea:focus {
   border-color: #212121;
@@ -474,11 +474,9 @@ table {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 .lt-ie8 .button-primary, .lt-ie8 .button-secondary {
   display: inline;
@@ -515,8 +513,8 @@ table {
   margin: 1.5em 0;
   padding: 8px;
   border: 1px solid;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .message-error {

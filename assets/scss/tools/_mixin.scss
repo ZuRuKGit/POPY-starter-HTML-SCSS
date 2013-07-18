@@ -209,31 +209,42 @@ $prefixes: ("-webkit-","-moz-", "");
 }
 
 // ----------------------------------------------------------
+// == Compass
+// ----------------------------------------------------------
+
+// = Dimensions image
+// -----------------------------
+@mixin dimensions($image) {
+    width:  image-width($image);
+    height: image-height($image);
+}
+
+// ----------------------------------------------------------
 // == CSS3
 // ----------------------------------------------------------
 
 // = Border-radius
 // -----------------------------
-@mixin border-radius($radius : 5px) {
+@mixin border-radius($radius : 3px) {
     @include prefixer(border-radius, $radius, moz spec)
 }
 
-@mixin border-top-radius($radius : 5px) {
+@mixin border-top-radius($radius : 3px) {
     @include prefixer(border-top-left-radius, $radius, moz spec);
     @include prefixer(border-top-right-radius, $radius, moz spec);
 }
 
-@mixin border-bottom-radius($radius : 5px) {
+@mixin border-bottom-radius($radius : 3px) {
     @include prefixer(border-bottom-left-radius, $radius, moz spec);
     @include prefixer(border-bottom-right-radius, $radius, moz spec);
 }
 
-@mixin border-left-radius($radius : 5px) {
+@mixin border-left-radius($radius : 3px) {
     @include prefixer(border-top-left-radius, $radius, moz spec);
     @include prefixer(border-bottom-left-radius, $radius, moz spec);
 }
 
-@mixin border-right-radius($radius : 5px) {
+@mixin border-right-radius($radius : 3px) {
     @include prefixer(border-top-right-radius, $radius, moz spec);
     @include prefixer(border-bottom-right-radius, $radius, moz spec);
 }
@@ -241,7 +252,69 @@ $prefixes: ("-webkit-","-moz-", "");
 // = Transition
 // -----------------------------
 @mixin transition ($transition : all .3s ease-in-out) {
-    @include prefixer(transition, $transition, webkit moz ms o spec);
+    @include prefixer(transition, $transition, webkit moz spec);
+}
+
+// = Keyframe
+// -----------------------------
+// @include keyframes(fadeIn) {
+//     from { opacity: 0 }
+//     to { opacity: 1 }
+// }
+@mixin keyframes($name) {
+    $original-prefix-for-webkit:    $prefix-for-webkit;
+    $original-prefix-for-mozilla:   $prefix-for-mozilla;
+    $original-prefix-for-microsoft: $prefix-for-microsoft;
+    $original-prefix-for-spec:      $prefix-for-spec;
+    @if $original-prefix-for-webkit {
+        @include disable-prefix-for-all();
+        $prefix-for-webkit: true;
+        @-webkit-keyframes #{$name} {
+            @content;
+        }
+    }
+    @if $original-prefix-for-mozilla {
+        @include disable-prefix-for-all();
+        $prefix-for-mozilla: true;
+        @-moz-keyframes #{$name} {
+            @content;
+        }
+    }
+    @if $original-prefix-for-spec {
+        @include disable-prefix-for-all();
+        $prefix-for-spec: true;
+        @keyframes #{$name} {
+            @content;
+        }
+    }
+    $prefix-for-webkit:    $original-prefix-for-webkit;
+    $prefix-for-mozilla:   $original-prefix-for-mozilla;
+    $prefix-for-microsoft: $original-prefix-for-microsoft;
+    $prefix-for-spec:      $original-prefix-for-spec;
+}
+
+// = Animation
+// -----------------------------
+@mixin animation ($animation) {
+    @include prefixer(animation, $animation, webkit moz spec);
+}
+
+// = Transform
+// -----------------------------
+@mixin transform($property: none) {
+//  none | <transform-function>
+    @include prefixer(transform, $property, webkit moz ms o spec);
+}
+
+@mixin transform-origin($axes: 50%) {
+// x-axis - left | center | right  | length | %
+// y-axis - top  | center | bottom | length | %
+// z-axis -                          length
+    @include prefixer(transform-origin, $axes, webkit moz ms o spec);
+}
+
+@mixin transform-style ($style: flat) {
+    @include prefixer(transform-style, $style, webkit moz ms o spec);
 }
 
 // = Box-sizing
