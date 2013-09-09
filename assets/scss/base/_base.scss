@@ -1,30 +1,18 @@
-/* Base
-   ----------------------- */
+/* Base */
 
-// 1. Set default font family to sans-serif.
-// 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
-// 3. Taille de la police par défaut 10px
 html {
     height: 100%;
-    font-size: 62.5%; // 3
-    font-family: sans-serif; // 1
-    -webkit-text-size-adjust: 100%; // 2
-    -ms-text-size-adjust: 100%; // 2
+    font-size: 62.5%
 }
 
 body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
-    font: #{$font-size-em}/#{$line-height} $font-base;
-    color: $color-text-base;
-    background-color: #fff;
+    font: #{$font-size-em}/#{$line-height} $sans-serif;
+    color: $text-clr;
+    background: #fff;
 }
 
-*,
-*:after,
-*:before {
+*, *:before, *:after {
     @include box-sizing(border-box);
-//    -webkit-font-smoothing: antialiased;
-//    font-smoothing: antialiased;
-//    text-rendering: optimizeLegibility;
 }

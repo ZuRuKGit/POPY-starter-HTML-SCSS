@@ -1,83 +1,163 @@
 <!DOCTYPE html>
-<!--[if IE 6]>         <html class="no-js is-ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js is-ie7 lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js is-ie8 lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
 <head>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <title>Style Guide</title>
-    <meta name="description" content="Style guide">
+    <meta name="description" content="Style Guide of CSS pattern">
     <meta name="viewport" content="initial-scale=1.0" />
-    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/screen.css" media="screen">
+    <link rel="stylesheet" href="css/print.css" media="print">
     <style>
-        .title {
-            font-size: 1.5em;
-            font-weight: bold;
-            border-bottom: 1px dotted #ededed;
-        }
-        .title-big {
-            padding: .75em 0;
-            font-size: 2em;
-            line-height: 1em;
-            font-weight: bold;
-            border-bottom: 2px solid #ddd;
-            border-top: 3px solid;
-        }
+        .wrapper { background: url('image/grid.png') 10px 0; }
     </style>
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    </script>
 </head>
 
 <body role="document">
 
-    <ul id="skip-nav" class="hide">
+    <ul id="skip-nav" class="is-hide">
         <li><a href="#nav">menu</a></li>
         <li><a href="#content">contenu</a></li>
     </ul>
 
     <header id="header" class="wrapper" role="banner">
+        <a href="#" id="logo"></a>
         <nav id="nav" role="navigation">
         </nav>
     </header>
 
-    <div id="content" class="wrapper">
-        <div id="typographie" class="col-12">
-            <h1 class="title-big">Typographie</h1>
-        </div>
+    <div id="content" class="wrapper" role="main">
         <div class="row">
-            <div id="title" class="col-6">
-                <h2 class="title">Titre</h2>
-                <h1>Titre h1 <small>avec un petit text</small> et un <a href="">lien</a> </h1>
-                <h2>Titre h2 <small>avec un petit text</small> et un <a href="">lien</a> </h2>
-                <h3>Titre h3 <small>avec un petit text</small> et un <a href="">lien</a> </h3>
-                <h4>Titre h4 <small>avec un petit text</small> et un <a href="">lien</a> </h4>
-                <h5>Titre h5 <small>avec un petit text</small> et un <a href="">lien</a> </h5>
-                <p>Un paragraphe</p>
+            <div class="col-8" >
+                <h1>h1 Headings</h1>
+                <p class="bigger"><strong>Bigger</strong> lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem, quisquam, molestias, error itaque veritatis sequi consequatur quam corporis vel illum quas voluptatibus cum nostrum laboriosam eum nam doloribus recusandae!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
+                <h2>h2 Headings</h2>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, consequuntur, iusto id ex dolorem voluptates modi dolor amet blanditiis porro non recusandae odit iste odio neque natus veritatis quisquam quod.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, a, earum beatae quae possimus doloremque tempora quis adipisci non expedita quisquam quia commodi eveniet et id officiis quas sapiente deleniti!</li>
+                </ol>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
+                <h3>H3 Headings</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
+                <h4>H4 Headings</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
+<pre>
+.box-hd {
+    padding: 1px;
+    border: 1px solid #111;
+}</pre>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                </blockquote>
             </div>
-            <div id="paragraphe" class="col-6">
-                <h2 class="title">Paragraphe</h2>
-                <p><strong>Lorem ipsum</strong> dolor <b>sit amet</b>, <a href="">consectetur</a> adipisicing elit. Quos, quae, autem eveniet labore quod totam ut sit esse voluptate ad minima unde reiciendis aliquid? Deleniti, illum iste voluptate. Repellendu <sub>sub</sub> voluptatem <sup>sup</sup> !</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, quae, autem eveniet labore quod totam ut sit esse voluptate ad minima unde reiciendis aliquid? Deleniti, illum iste voluptate. Repellendus, voluptatem!</p>
+            <div class="col-4">
+                <h5>H5 Headings</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
+                <h6>H6 Headings</h6>
+                <p class="smaller"><strong>Smaller</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
+                <hr>
+                <ul>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <ul>
+                        <li>lorem ipsum</li>
+                        <li>lorem ipsum</li>
+                        <li>lorem ipsum</li>
+                    </ul>
+                    <li>lorem ipsum</li>
+                </ul>
+                <ul class="list-reset">
+                    <li><cite>cite element</cite> example</li>
+                    <li>The <del>del element</del> example</li>
+                    <li>The <dfn title="Title text">dfn element with title</dfn> examples</li>
+                    <li>The <em>em element</em> example</li>
+                    <li>The <i>i element</i> example</li>
+                    <li>The img element <img src="http://lorempixel.com/21/21" alt=""> example</li>
+                    <li>The <ins>ins element</ins> example</li>
+                    <li>The <mark>mark element</mark> example</li>
+                    <li>The <q>q element <q>inside</q> a q element</q> example</li>
+                    <li>The <s>s element</s> example</li>
+                    <li>The <samp>samp element</samp> example</li>
+                    <li>The <small>small element</small> example</li>
+                    <li>The <strong>strong element</strong> example</li>
+                    <li>The <sub>sub element</sub> example</li>
+                    <li>The <sup>sup element</sup> example</li>
+                    <li>The <u>u element</u> example</li>
+                    <li>The <var>var element</var> example</li>
+                    <li>The <abbr title="attribute">abbr element</abbr> exemple</li>
+                    <li>The <code>code element</code> example</li>
+                    <li>The <kbd>kbd element</kbd> example</li>
+                    <li>The <span>span element</span> example</li>
+                </ul>
             </div>
-        </div>
-
-        <div id="list">
-            <h2 class="title">List</h2>
-            <ul>
-                <li>UL - Lorem ipsum dolor sit amet</li>
-                <li>UL - Lorem ipsum dolor sit amet</li>
-                <li>UL - Lorem ipsum dolor sit amet</li>
-                <li>UL - Lorem ipsum dolor sit amet</li>
-            </ul>
-            <ol>
-                <li>OL - Lorem ipsum dolor sit amet</li>
-                <li>OL - Lorem ipsum dolor sit amet</li>
-                <li>OL - Lorem ipsum dolor sit amet</li>
-                <li>OL - Lorem ipsum dolor sit amet</li>
-            </ol>
+            <div class="col-8">
+                <form class="pure-form">
+                    <p>
+                        Gender :
+                                <label for="form-radio-1">
+                                    <input id="form-radio-1" name="form-radio" type="radio"> Radio 1
+                                </label>
+                                <label for="form-radio-2">
+                                    <input id="form-radio-2" name="form-radio" type="radio"> Radio 2
+                                </label>
+                    </p>
+                    <p>
+                        <label for="form-text">Input text</label>
+                        <input id="form-text" type="text" placeholder="placeholder" name="form-text" />
+                    </p>
+                    <p>
+                        <label for="form-password">Input password</label>
+                        <input id="form-password" type="password" placeholder="placeholder" name="form-password" />
+                    </p>
+                    <p>
+                        <label for="form-textarea">Textarea</label>
+                        <textarea name="form-textarea" id="form-textarea" cols="30" rows="10"></textarea>
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                             <p>
+                                <label for="form-checkbox-1">
+                                    <input id="form-checkbox-1" type="checkbox"> Accept rules
+                                </label>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-full">Sign in</button>
+                        </div>
+                    </div>
+                    <p>
+                        <a href="#" class="btn btn-l">Link Button Large</a>
+                        <a href="#" class="btn">Link Button</a>
+                        <a href="#" class="btn-cancel btn-s">Link Button Small</a>
+                    </p>
+                </form>
+                <div class="message-error"><strong>Error !</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="message-warn"><strong>Warn !</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="message-sucess"><strong>Sucess!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <div class="message-info"><strong>Info!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                <hr>
+                <div class="media">
+                    <a href="http://twitter.com/sutterlity" class="media-img">
+                       <img src="http://lorempixel.com/140/140" alt="Placeholder">
+                    </a>
+                    <a href="http://twitter.com/sutterlity" class="media-img media-img-ext">
+                       <img src="http://lorempixel.com/60/100" alt="Placeholder">
+                    </a>
+                    <div class="media-bd">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, non, veniam laborum magni recusandae quibusdam accusamus nemo repudiandae cumque culpa quasi quidem dolor cupiditate sint esse harum praesentium sapiente molestias.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 
 </body>
 

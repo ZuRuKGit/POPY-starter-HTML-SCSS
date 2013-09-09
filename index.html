@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<!--[if IE 6]>         <html class="no-js is-ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js is-ie7 lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js is-ie8 lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
 <head>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/screen.css">
-    <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="assets/css/screen.css" media="screen">
+    <link rel="stylesheet" href="assets/css/print.css" media="print">
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    </script>
 </head>
 
 <body role="document">
 
-    <ul id="skip-nav" class="hide">
+    <ul id="skip-nav" class="is-hide">
         <li><a href="#nav">menu</a></li>
         <li><a href="#content">contenu</a></li>
     </ul>
+
+    <noscript>
+        <p class="message-warn txt-c">Pour une meilleure expérience utilisateur, merci d'activer Javascipt dans les préférences de votre navigateur.</p>
+    </noscript>
 
     <header id="header" class="wrapper" role="banner">
         <a href="#" id="logo"></a>
@@ -30,12 +35,6 @@
     <div id="content" class="wrapper">
         <div class="row">
             <div id="main" class="col-8" role="main">
-                <div class="message-error">Message d'erreur</div>
-                <div class="message-ok">Message ok</div>
-                <div class="message-warn">Message d'alerte</div>
-                <div class="message-info">Message d'info</div>
-                <a href="#" class="button-primary">Valider</a>
-                <a href="#" class="button-secondary small">Annuler</a>
             </div>
             <aside id="aside" class="col-4" role="complementary">
             </aside>
@@ -45,9 +44,16 @@
     <footer id="footer" class="wrapper" role="contentinfo">
     </footer>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="js/main.js"></script>
+    <!--[if lte IE 8]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <![endif]-->
+
+    <!--[if gt IE 8]><!-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+    <!--<![endif]-->
+    <script src="assets/js/main.js"></script>
 
 </body>
 

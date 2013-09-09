@@ -1,4 +1,4 @@
-// Taille de .row
+// Row size
 $row-width: 100% !default;
 @if $grid-fluid == true {
     $row-width: 100%;
@@ -19,7 +19,7 @@ $col-width: $row-width / $cols;
 }
 
 /* Grid
-   ----------------------- */
+-------------------------- */
 .wrapper {
     @if $grid-fluid == true {
         max-width: $wrapper-max-width;
@@ -32,7 +32,11 @@ $col-width: $row-width / $cols;
 }
 
 .row {
-    @extend .clearfix;
+    overflow: hidden;
+    .row {
+        margin-left: -$gutter-width / 2;
+        margin-right: -$gutter-width / 2;
+    }
 }
 
 [class*=col-] {
@@ -42,7 +46,6 @@ $col-width: $row-width / $cols;
 }
 
 /* Column */
-
 @for $i from 1 through ($cols) {
     .col-#{$i} {
         @include col($i);
@@ -50,9 +53,15 @@ $col-width: $row-width / $cols;
 }
 
 /* Push left column */
-
 @for $i from 1 through ($cols - 1) {
     .offset-col-#{$i} {
         @include offset-col($i);
+    }
+}
+
+@include mq(tiny) {
+    [class*=col-] {
+        width: auto;
+        float: inherit;
     }
 }

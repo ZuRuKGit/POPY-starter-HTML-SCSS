@@ -1,39 +1,56 @@
 /* Button
-   ----------------------- */
+-------------------------- */
 
-%button {
-    @include inline-block();
-    padding: 0 1.5em;
-    margin: 0 5px 0 0;
-    height: 2.5em;
-    line-height: 2.5em;
-    vertical-align: middle;
+%btn {
+    height: $base-line-height * 2;
+    @include inline-block(middle);
+    padding: 0 $base-line-height;
+    margin: 0;
+    line-height: $base-line-height * 2;
+    white-space: nowrap;
+    text-align: center;
     cursor: pointer;
+    border: none;
     text-decoration: none;
-    @include transition();
-    @include border-radius();
-    &.small {
-        font-size: .75em;
-    }
-    &.big {
-        font-size: 1.25em;
+    @include transition(all .2s ease-in-out);
+    @include border-radius($bdr-rad);
+    -webkit-user-drag: none;
+    @include user-select(none);
+    -webkit-appearance: none;
+}
+
+.btn-s {
+    height: $base-line-height;
+    padding: 0 $base-line-height / 2;
+    line-height: $base-line-height;
+    font-size: em(10px, 14px);
+}
+
+.btn-l {
+    height: $base-line-height * 3;
+    padding: 0 $base-line-height * 2;
+    line-height: $base-line-height * 3;
+    font-size: em(20px, 14px);
+}
+
+.btn-full { width: 100%; }
+
+.btn {
+    @extend %btn;
+    color: $white;
+    background-color: $clr-1;
+    &:hover {
+        color: $white;
+        background: $clr-1-darken;
     }
 }
 
-@mixin button($color, $bkg-color-btn, $color-btn-hover, $bkg-color-btn-hover ) {
-    @extend %button;
-    color: $color;
-    background: $bkg-color-btn;
-    &:hover, &:focus {
-        color: $color-btn-hover;
-        background: $bkg-color-btn-hover;
+.btn-cancel {
+    @extend %btn;
+    color: $white;
+    background-color: $clr-error;
+    &:hover {
+        color: $white;
+        background: shade($clr-error, 15%);
     }
-}
-
-.button-primary {
-    @include button($white, $bkg-color-button-primary, $white, darken($bkg-color-button-primary, 20%));
-}
-
-.button-secondary {
-    @include button($white, $bkg-color-button-secondary, $white, darken($bkg-color-button-secondary, 20%));
 }

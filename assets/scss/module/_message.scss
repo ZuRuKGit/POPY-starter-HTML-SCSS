@@ -1,32 +1,30 @@
 /* Message
-   ----------------------- */
+-------------------------- */
 
 %message {
-    margin: $spacing 0;
-    padding: 8px;
-    border: 1px solid;
-    @include border-radius();
+    @include leader();
+    @include trailer();
+    padding: 1.5em;
 }
 
 @mixin message($color) {
     @extend %message;
-    color: $color;
-    background: lighten($color, 38%);
-    border-color: lighten(adjust-hue($color, -10), 20%);
+    color: $white;
+    background: $color;
 }
 
 .message-error {
-    @include message($color-message-error);
+    @include message($clr-error);
 }
 
-.message-ok {
-    @include message($color-message-ok);
+.message-sucess {
+    @include message($clr-sucess);
 }
 
 .message-warn {
-    @include message($color-message-warn);
+    @include message($clr-warn);
 }
 
 .message-info {
-    @include message($color-message-info);
+    @include message($clr-info);
 }

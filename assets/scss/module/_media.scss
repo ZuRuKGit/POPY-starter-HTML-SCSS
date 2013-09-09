@@ -1,0 +1,23 @@
+/* Media
+-------------------------- */
+
+.media {
+    overflow: hidden;
+    position: relative;
+}
+
+.media-img {
+    float: left;
+    margin-right: $gutter-width;
+    > img {
+        display: block;
+    }
+}
+
+.media-img-ext {
+    float: right;
+    margin-left: $gutter-width;
+    margin-right: 0;
+}
+
+.media-bd {}

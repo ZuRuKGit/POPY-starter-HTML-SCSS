@@ -1,0 +1,43 @@
+/* Spacing
+-------------------------- */
+// p, m = padding,margin
+// t, r, b, l = top, right, bottom, left
+// s, m, l, n, 0 = small($space-s), medium($space-m), large($space-l), zero or none(0)
+
+/* Margin */
+.m-reset { margin: 0; }
+.mtn { margin-top: 0; }
+.mts { margin-top: $space-s; }
+.mtm { margin-top: $space-m; }
+.mtl { margin-top: $space-l; }
+.mbn { margin-bottom: 0; }
+.mbs { margin-bottom: $space-s; }
+.mbm { margin-bottom: $space-m; }
+.mbl { margin-bottom: $space-l; }
+.mln { margin-left: 0; }
+.mls { margin-left: $space-s; }
+.mlm { margin-left: $space-m; }
+.mll { margin-left: $space-l; }
+.mrn { margin-right: 0; }
+.mrs { margin-right: $space-s; }
+.mrm { margin-right: $space-m; }
+.mrl { margin-right: $space-l; }
+
+/* Padding */
+.p-reset { padding: 0; }
+.ptn { padding-top: 0; }
+.pts { padding-top: $space-s; }
+.ptm { padding-top: $space-m; }
+.ptl { padding-top: $space-l; }
+.pbn { padding-bottom: 0; }
+.pbs { padding-bottom: $space-s; }
+.pbm { padding-bottom: $space-m; }
+.pbl { padding-bottom: $space-l; }
+.pln { padding-left: 0; }
+.pls { padding-left: $space-s; }
+.plm { padding-left: $space-m; }
+.pll { padding-left: $space-l; }
+.prn { padding-right: 0; }
+.prs { padding-right: $space-s; }
+.prm { padding-right: $space-m; }
+.prl { padding-right: $space-l; }

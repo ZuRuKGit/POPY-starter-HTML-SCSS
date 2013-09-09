@@ -1,16 +1,22 @@
-// Feuille de style de base compatible à partir d'IE8
+/*
+Projet: POPY - Framework
+Author: Laurent SUTTERLITY - laurent@sutterlity.fr
+Version: 2.0
+Date: September 2013
+*/
 
-// Tools
-@import "tools/_addons.scss";
-@import "tools/_variables.scss";
-@import "tools/_fonctions.scss";
+// Requiered    : Compass
+// Codind rules : https://github.com/necolas/idiomatic-css
+
+@import "compass";
+@import "compass/css3/user-interface";
+@import "_variables.scss";
+@import "tools/_function.scss";
 @import "tools/_mixin.scss";
 
-//@import "base/_debug.scss";
-
 /* ----------------------------------------
-   Base
-   ---------------------------------------- */
+   Base / Normalize
+------------------------------------------- */
 
 @import "base/_html5.scss";
 @import "base/_base.scss";
@@ -21,30 +27,32 @@
 @import "base/_figure.scss";
 @import "base/_form.scss";
 @import "base/_table.scss";
-@import "base/_selection.scss";
+
+/* ----------------------------------------
+   Layout
+------------------------------------------- */
+
+@import "layout/_header.scss";
+@import "layout/_content.scss";
+@import "layout/_aside.scss";
+@import "layout/_footer.scss";
 
 /* ----------------------------------------
    Module
-   ---------------------------------------- */
+------------------------------------------- */
 
 @import "module/_grid.scss";
 @import "module/_list.scss";
 @import "module/_button.scss";
+@import "module/_media.scss";
+@import "module/_box.scss";
+@import "module/_icon.scss";
 @import "module/_message.scss";
 
 /* ----------------------------------------
-   No module
-   ---------------------------------------- */
+   Helpers
+------------------------------------------- */
 
-@import "no-modular/_no-modular.scss";
-
-/* ----------------------------------------
-   Helper
-   ---------------------------------------- */
-@import "base/_helper.scss";
-
-/* ----------------------------------------
-   RWD
-   ---------------------------------------- */
-
-@import "rwd/_rwd.scss";
+@import "helper/_block-helper.scss";
+@import "helper/_spacing.scss";
+@import "helper/_text.scss";

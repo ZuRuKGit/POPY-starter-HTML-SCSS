@@ -1,0 +1,15 @@
+/* Icon
+-------------------------- */
+
+// Uncomment line 1 and 14
+// to activate Compass sprite tools
+
+$icon-sprite-dimensions: true;
+
+//@import "icon/*.png";
+
+[class*="icon-"] {
+    @include inline-block();
+}
+
+//include all-icon-sprites;

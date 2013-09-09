@@ -1,65 +1,150 @@
-/* Typography
-   ----------------------- */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0 0 $spacing 0;
-    font-size: 1em;
-    font-weight: normal;
+/* Typographie
+-------------------------- */
+
+/* Reset margin-top on first-child */
+p, #{headings()} {
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
-// Address styling not present in IE 8/9, Safari 5, and Chrome.
-abbr[title] {
-	border-bottom: 1px dotted;
+p {
+    @include leader();
+    @include trailer();
 }
 
-// Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
-b, strong { font-weight: bold }
+/* Headings */
+#{headings()},
+.title-h1,
+.title-h2,
+.title-h3,
+.title-h4,
+.title-h5,
+.title-h6 {
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
 
-// Address styling not present in Safari 5 and Chrome.
-dfn { font-style: italic }
+h1, .title-h1 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(36px);
+}
+h2, .title-h2 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(30px);
+}
+h3, .title-h3 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(24px);
+}
+h4, .title-h4 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(18px);
+}
+h5, .title-h5 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(14px);
+}
+h6, .title-h6 {
+    margin-top:    rhythm(1,42px);
+    margin-bottom: rhythm(1,42px);
+    @include adjust-font-size-to(12px);
+}
+
+/* Alternative font-sizing */
+
+.smaller {
+    margin-top:    rhythm(1,10px);
+    margin-bottom: rhythm(1,10px);
+    @include adjust-font-size-to(10px)
+}
+
+.bigger {
+    margin-top:    rhythm(1,24px);
+    margin-bottom: rhythm(1,24px);
+    @include adjust-font-size-to(24px);
+}
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+dfn {
+    font-style: italic;
+    line-height: 1em;
+}
 
 hr {
-	display: block;
-	height: 1px;
-	margin: $spacing 0;
-	padding: 0;
-	border: 0;
-	border-top: 1px solid #ccc;
+    display: block;
+    height: 1px;
+    margin: $base-line-height 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid $clr-0-light;
 }
 
-// Address styling not present in IE 8/9.
 mark {
-	background: #ff0;
-	color: #000;
+    background: #ff0;
+    color: #000;
 }
 
-// Correct font family set oddly in Safari 5 and Chrome.
 code, kbd, pre, samp {
-	font-family: monospace, serif;
-	font-size: 1em;
+    font-family: $serif;
 }
 
-// Improve readability of pre-formatted text in all browsers.
-pre { white-space: pre-wrap }
+pre {
+    @include leader();
+    @include trailer();
+    padding: 1.5em;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    @include rhythm-borders(1px);
+    background-color: $clr-0-lighten;
+    @include border-radius(bdr-rad);
+}
 
-// Set consistent quote types.
-q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+blockquote {
+    padding: 1.5em 20px;
+    margin: $base-line-height 40px;
+    font-family: $sans-serif;
+    border-left: 4px solid $clr-0-light;
+    color: $clr-0;
+    background: #fff;
+    small {
+        @include adjust-font-size-to(11px);
+        color: $clr-0-light;
+        &:before {
+            content: '\2014 \00A0';
+            color: $clr-0-lighten;
+        }
+    }
+}
 
-// Address inconsistent and variable font size in all browsers.
-small { font-size: 80% }
+cite { font-style: italic; }
 
-// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+q {
+    quotes: none;
+    &:before, &:after {
+        content: '';
+        content: none;
+    }
+}
+
+small { font-size: 80%; }
+
 sub, sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
-sup { top: -0.5em }
+sup { top: -0.5em; }
 
-sub { bottom: -0.25em }
+sub { bottom: -0.25em; }

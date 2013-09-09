@@ -1,0 +1,22 @@
+// 1 = Convert px to em
+// 2 = Tint
+// 3 = Shade
+
+// 1 = Convert px to em
+//     Use : font-size: em(21px, 14px);
+@function em($target, $context: $base-font-size) {
+    @if $target == 0 { @return 0 }
+    @return ($target / $context + 0em);
+}
+
+// 2 = Tint "mixin form http://bourbon.io/"
+//     Add percentage of white to a color
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}
+
+// 3 = shade "mixin form http://bourbon.io/"
+// Add percentage of black to a color
+@function shade($color, $percent){
+    @return mix(black, $color, $percent);
+}

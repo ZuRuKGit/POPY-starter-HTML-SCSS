@@ -1,30 +1,9 @@
-// ----------------------------------------------------------
-// == Base
-// ----------------------------------------------------------
+// 1 = Clearfix
+// 2 = Inline-block
+// 3 = Media Querie
 
-// = Inline-block
-// -----------------------------
-//@include inline-block()
-@mixin inline-block ($v-align: middle, $haslayout : true){
-    display: inline-block;
-    vertical-align: $v-align;
-    @if $haslayout == true {
-        .lt-ie8 & {
-            display: inline;
-            zoom: 1;
-        }
-    }
-}
-
-// = Clearfix
-// -----------------------------
-//@include clearfix();
-@mixin clearfix ($haslayout : true) {
-    @if $haslayout == true {
-        .lt-ie8 & {
-            zoom: 1;
-        }
-    }
+// 1 = Clearfix
+@mixin clearfix () {
     &:before, &:after {
         content: "";
         display: table;
@@ -34,310 +13,38 @@
     }
 }
 
-// = Opacity
-// -----------------------------
-//@include opacity();
-@mixin opacity($opacity) {
-    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
-    opacity: $opacity;
-}
-
-// = Placeholder
-// -----------------------------
-@mixin placeholder($color : $color-mixin-placeholder) {
-    &::-webkit-input-placeholder {
-        color: $color;
-    }
-    &:-moz-placeholder {
-        color: $color;
-    }
-    &:-ms-input-placeholder {
-        color: $color;
-    }
-}
-
-// = Selection
-// -----------------------------
-$prefixes: ("-webkit-","-moz-", "");
-@mixin selection($color, $background) {
-    @each $prefix in $prefixes {
-        ::#{$prefix}selection {
-            color: $color;
-            background: $background;
-            text-shadow:none;
+// 2 = Inline-block
+@mixin inline-block ($v-align: middle, $haslayout : true){
+    display: inline-block;
+    vertical-align: $v-align;
+    @if $ie7 == true {
+        .lt-ie8 & {
+            display: inline;
+            zoom: 1;
         }
     }
 }
 
-// = Rem
-// -----------------------------
-//@include rem(font-size, 1.6rem);
-//@include rem(padding, 20px 10px);
-@function parseInt($n) {
-    @return $n / ($n * 0 + 1);
-}
-@mixin rem($property, $values) {
-    $px : ();
-    $rem: ();
-    @each $value in $values {
-        @if $value == 0 or $value == auto {
-            $px : append($px , $value);
-            $rem: append($rem, $value);
-        }
-        @else {
-            $unit: unit($value);
-            $val: parseInt($value);
-            @if $unit == "px" {
-                $px : append($px,  $value);
-                $rem: append($rem, ($val / 10 + rem));
-            }
-            @if $unit == "rem" {
-                $px : append($px,  ($val * 10 + px));
-                $rem: append($rem, $value);
-            }
-        }
+// 3 = Media Queries
+@mixin mq($screen) {
+    @if $screen == large  {
+        @media (min-width: 1280px) { @content; }
     }
-    @if $px == $rem {
-        #{$property}: $px;
-    } @else {
-        #{$property}: $px;
-        #{$property}: $rem;
+    @if $screen == medium {
+        @media (min-width: 769px) { @content; }
     }
-}
-
-// = Position
-// -----------------------------
-//@include position(relative, 0px 0 0 100px);
-@mixin position ($position: relative, $coordinates: 0 0 0 0) {
-    @if type-of($position) == list {
-        $coordinates: $position;
-        $position: relative;
+    @if $screen == small {
+        @media (max-width: 768px)  { @content; }
     }
-    $top: nth($coordinates, 1);
-    $right: nth($coordinates, 2);
-    $bottom: nth($coordinates, 3);
-    $left: nth($coordinates, 4);
-    position: $position;
-    @if $top == auto {
-        top: $top;
+    @if $screen == tiny  {
+        @media (max-width: 640px)  { @content; }
     }
-    @else if not(unitless($top)) {
-        top: $top;
-    }
-    @if $right == auto {
-        right: $right;
-    }
-    @else if not(unitless($right)) {
-        right: $right;
-    }
-    @if $bottom == auto {
-        bottom: $bottom;
-    }
-    @else if not(unitless($bottom)) {
-        bottom: $bottom;
-    }
-    @if $left == auto {
-        left: $left;
-    }
-    @else if not(unitless($left)) {
-        left: $left;
-    }
-}
-
-// = Triangle
-// -----------------------------
-//@include triangle(12px, gray, down);
-@mixin triangle ($size, $color, $direction) {
-    height: 0;
-    width: 0;
-    @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
-        border-color: transparent;
-        border-style: solid;
-        border-width: $size / 2;
-        @if $direction == up {
-            border-bottom-color: $color;
-        } @else if $direction == right {
-            border-left-color:   $color;
-        } @else if $direction == down {
-            border-top-color:    $color;
-        } @else if $direction == left {
-            border-right-color:  $color;
-        }
-    }
-    @else if ($direction == up-right) or ($direction == up-left) {
-        border-top: $size solid $color;
-        @if $direction == up-right {
-            border-left:  $size solid transparent;
-        } @else if $direction == up-left {
-            border-right: $size solid transparent;
-        }
-    }
-    @else if ($direction == down-right) or ($direction == down-left) {
-        border-bottom: $size solid $color;
-        @if $direction == down-right {
-            border-left:  $size solid transparent;
-        } @else if $direction == down-left {
-            border-right: $size solid transparent;
-        }
-    }
-}
-
-// ----------------------------------------------------------
-// == Font face
-// ----------------------------------------------------------
-// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
-// @include font-face(SourceSansPro, '/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular', normal);
-@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
-  @font-face {
-    font-family: $font-family;
-    font-weight: $weight;
-    font-style: $style;
-    @if $asset-pipeline == true {
-      src: font-url('#{$file-path}.eot');
-      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
-           font-url('#{$file-path}.woff')                format('woff'),
-           font-url('#{$file-path}.ttf')                 format('truetype'),
-           font-url('#{$file-path}.svg##{$font-family}') format('svg');
-    } @else {
-      src: url('#{$file-path}.eot');
-      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
-           url('#{$file-path}.woff')                     format('woff'),
-           url('#{$file-path}.ttf')                      format('truetype'),
-           url('#{$file-path}.svg##{$font-family}')      format('svg');
-    }
-  }
-}
-
-// ----------------------------------------------------------
-// == Compass
-// ----------------------------------------------------------
-
-// = Dimensions image
-// -----------------------------
-@mixin dimensions($image) {
-    width:  image-width($image);
-    height: image-height($image);
-}
-
-// ----------------------------------------------------------
-// == CSS3
-// ----------------------------------------------------------
-
-// = Border-radius
-// -----------------------------
-@mixin border-radius($radius : 3px) {
-    @include prefixer(border-radius, $radius, moz spec)
-}
-
-@mixin border-top-radius($radius : 3px) {
-    @include prefixer(border-top-left-radius, $radius, moz spec);
-    @include prefixer(border-top-right-radius, $radius, moz spec);
-}
-
-@mixin border-bottom-radius($radius : 3px) {
-    @include prefixer(border-bottom-left-radius, $radius, moz spec);
-    @include prefixer(border-bottom-right-radius, $radius, moz spec);
-}
-
-@mixin border-left-radius($radius : 3px) {
-    @include prefixer(border-top-left-radius, $radius, moz spec);
-    @include prefixer(border-bottom-left-radius, $radius, moz spec);
-}
-
-@mixin border-right-radius($radius : 3px) {
-    @include prefixer(border-top-right-radius, $radius, moz spec);
-    @include prefixer(border-bottom-right-radius, $radius, moz spec);
-}
-
-// = Transition
-// -----------------------------
-@mixin transition ($transition : all .3s ease-in-out) {
-    @include prefixer(transition, $transition, webkit moz spec);
-}
-
-// = Keyframe
-// -----------------------------
-// @include keyframes(fadeIn) {
-//     from { opacity: 0 }
-//     to { opacity: 1 }
-// }
-@mixin keyframes($name) {
-    $original-prefix-for-webkit:    $prefix-for-webkit;
-    $original-prefix-for-mozilla:   $prefix-for-mozilla;
-    $original-prefix-for-microsoft: $prefix-for-microsoft;
-    $original-prefix-for-spec:      $prefix-for-spec;
-    @if $original-prefix-for-webkit {
-        @include disable-prefix-for-all();
-        $prefix-for-webkit: true;
-        @-webkit-keyframes #{$name} {
+    @if $screen == retina {
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
             @content;
         }
     }
-    @if $original-prefix-for-mozilla {
-        @include disable-prefix-for-all();
-        $prefix-for-mozilla: true;
-        @-moz-keyframes #{$name} {
-            @content;
-        }
-    }
-    @if $original-prefix-for-spec {
-        @include disable-prefix-for-all();
-        $prefix-for-spec: true;
-        @keyframes #{$name} {
-            @content;
-        }
-    }
-    $prefix-for-webkit:    $original-prefix-for-webkit;
-    $prefix-for-mozilla:   $original-prefix-for-mozilla;
-    $prefix-for-microsoft: $original-prefix-for-microsoft;
-    $prefix-for-spec:      $original-prefix-for-spec;
-}
-
-// = Animation
-// -----------------------------
-@mixin animation ($animation) {
-    @include prefixer(animation, $animation, webkit moz spec);
-}
-
-// = Transform
-// -----------------------------
-@mixin transform($property: none) {
-//  none | <transform-function>
-    @include prefixer(transform, $property, webkit moz ms o spec);
-}
-
-@mixin transform-origin($axes: 50%) {
-// x-axis - left | center | right  | length | %
-// y-axis - top  | center | bottom | length | %
-// z-axis -                          length
-    @include prefixer(transform-origin, $axes, webkit moz ms o spec);
-}
-
-@mixin transform-style ($style: flat) {
-    @include prefixer(transform-style, $style, webkit moz ms o spec);
-}
-
-// = Box-sizing
-// -----------------------------
-@mixin box-sizing ($box : border-box) {
-    //  content-box | border-box | inherit
-    @include prefixer(box-sizing, $box, webkit moz spec);
-}
-
-// = Filter
-// -----------------------------
-@mixin filter (
-    $filter-1,
-    $filter-2 : false,
-    $filter-3 : false,
-    $filter-4 : false,
-    $filter-5 : false,
-    $filter-6 : false,
-    $filter-7 : false,
-    $filter-8 : false,
-    $filter-9 : false,
-    $filter-10: false
-    ) {
-    $filter : compact($filter-1, $filter-2, $filter-3, $filter-4, $filter-5, $filter-6, $filter-7, $filter-8, $filter-9, $filter-10);
-    @include prefixer(filter, $filter, webkit moz spec);
 }

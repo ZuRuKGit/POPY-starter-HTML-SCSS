@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+
+//----------------------------------------
+//   Debug
+//---------------------------------------
+
+// Uncomment ligne 9 for activate debug
+// @import "base/_debug.scss";
+
+//----------------------------------------
+//   Common variables
+//----------------------------------------
+
+// Base color
+$white         : #fff;
+$clr-error     : #e74c3c; // red
+$clr-sucess    : #2ecc71; // green
+$clr-warn      : #f1c40f; // orange
+$clr-info      : #95a5a6; // grey
+
+$clr-0         : #95a5a6; // grey
+$clr-0-light   : tint($clr-0, 50%);
+$clr-0-lighten : tint($clr-0, 85%);
+$clr-0-dark    : shade($clr-0, 15%);
+$clr-0-darken  : shade($clr-0, 30%);
+
+$clr-1         : #3498db; // blue
+$clr-1-light   : tint($clr-1, 50%);
+$clr-1-lighten : tint($clr-1, 85%);
+$clr-1-dark    : shade($clr-1, 15%);
+$clr-1-darken  : shade($clr-1, 30%);
+
+$clr-2       : #34495e;
+$clr-2-light   : tint($clr-2, 50%);
+$clr-2-lighten : tint($clr-2, 85%);
+$clr-2-dark    : shade($clr-2, 15%);
+$clr-2-darken  : shade($clr-2, 30%);
+
+
+// Border radius
+$bdr-rad: 3px;
+
+//----------------------------------------
+//   Support
+//----------------------------------------
+
+// Browser support
+$ie7: true;
+
+//----------------------------------------
+//   Typography
+//----------------------------------------
+
+// Base font stack by http://cssfontstack.com/
+$sans-serif : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif      : "Consolas", Monaco, Menlo, Courier New, monospace;
+
+// Base font
+$font-size-px: 14; // Same size as line 65
+$font-size-em : #{$font-size-px/10}em;
+$line-height: 1.5; // EM version of line 66
+
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+$base-font-size: 14px;
+$base-line-height: 21px;
+
+// Texte base color
+$text-clr : $clr-0-darken;
+
+// Link
+$color-link: $clr-1;
+$color-link-hover: $clr-1-light;
+
+// Placeholder
+$color-mixin-placeholder: $clr-0-light;
+
+// Selection
+$color-selection: $clr-1;
+
+//----------------------------------------
+//   Grid
+//----------------------------------------
+
+// Grid choice
+$grid-fluid: true !default; // false for grid in px
+
+// Wrapper max size in px
+$wrapper-max-width: 960px;
+
+// Wrapper min size in px
+$wrapper-min-width: 320px;
+
+// Number of col
+$cols: 12;
+
+// Gutter size in px
+$gutter-width: 20px;
+
+//----------------------------------------
+//   Spacing
+//----------------------------------------
+
+$space-n : 0;
+$space-s : rhythm(.5,$base-font-size);
+$space-m : rhythm(1,$base-font-size);
+$space-l : rhythm(2,$base-font-size);
