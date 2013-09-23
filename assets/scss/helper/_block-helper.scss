@@ -1,6 +1,13 @@
 /* Block Helper
 -------------------------- */
 
+/* clearfix */
+.cfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .is-hide { display: none; }
 
 /* Display */
