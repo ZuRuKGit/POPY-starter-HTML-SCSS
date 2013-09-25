@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.media-img {
+.media--img {
     float: left;
     margin-right: $gutter-width;
     > img {
@@ -14,10 +14,10 @@
     }
 }
 
-.media-img-ext {
+.media--img-ext {
     float: right;
     margin-left: $gutter-width;
     margin-right: 0;
 }
 
-.media-bd {}
+.media--bd {}

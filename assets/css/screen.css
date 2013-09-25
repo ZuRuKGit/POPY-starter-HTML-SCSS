@@ -347,6 +347,7 @@ select {
 }
 
 button {
+  border: none;
   background: none;
 }
 
@@ -439,13 +440,6 @@ table {
   border-spacing: 0;
 }
 
-/* ----------------------------------------
-   Layout
-------------------------------------------- */
-/* Header
--------------------------- */
-/* Footer
--------------------------- */
 /* ----------------------------------------
    Module
 ------------------------------------------- */
@@ -668,15 +662,15 @@ table {
   position: relative;
 }
 
-.media-img {
+.media--img {
   float: left;
   margin-right: 20px;
 }
-.media-img > img {
+.media--img > img {
   display: block;
 }
 
-.media-img-ext {
+.media--img-ext {
   float: right;
   margin-left: 20px;
   margin-right: 0;
@@ -725,10 +719,28 @@ table {
 }
 
 /* ----------------------------------------
+   Partial
+------------------------------------------- */
+/* Header
+-------------------------- */
+/* Content
+-------------------------- */
+/* Aside
+-------------------------- */
+/* Footer
+-------------------------- */
+/* ----------------------------------------
    Helpers
 ------------------------------------------- */
 /* Block Helper
 -------------------------- */
+/* clearfix */
+.cfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .is-hide {
   display: none;
 }

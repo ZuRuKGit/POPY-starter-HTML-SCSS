@@ -29,15 +29,6 @@ Date: September 2013
 @import "base/_table.scss";
 
 /* ----------------------------------------
-   Layout
-------------------------------------------- */
-
-@import "layout/_header.scss";
-@import "layout/_content.scss";
-@import "layout/_aside.scss";
-@import "layout/_footer.scss";
-
-/* ----------------------------------------
    Module
 ------------------------------------------- */
 
@@ -50,8 +41,14 @@ Date: September 2013
 @import "module/_message.scss";
 
 /* ----------------------------------------
-   No Modular
+   Partial
 ------------------------------------------- */
+
+@import "partial/_header.scss";
+@import "partial/_content.scss";
+@import "partial/_aside.scss";
+@import "partial/_footer.scss";
+
 
 /* ----------------------------------------
    Helpers
