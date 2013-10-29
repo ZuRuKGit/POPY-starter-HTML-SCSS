@@ -13,8 +13,8 @@
 /* Display */
 .disp-b  { display: block; }
 .disp-i  { display: inline; }
-.disp-ib { display: inline-block; }
-.disp-t  { display: table; border-collapse: collapse; }
+.disp-ib { @include inline-block; }
+.disp-t  { display: table; width: 100%; border-collapse: collapse; }
 .disp-tc { display: table-cell; }
 .disp-tr { display: table-row; }
 

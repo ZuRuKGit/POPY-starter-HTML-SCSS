@@ -2,22 +2,14 @@
 -------------------------- */
 
 .media {
-    overflow: hidden;
-    position: relative;
+    @include clearfix;
 }
 
-.media--img {
+.media--thumb {
     float: left;
-    margin-right: $gutter-width;
-    > img {
-        display: block;
-    }
+    margin-right: 20px;
 }
 
-.media--img-ext {
-    float: right;
-    margin-left: $gutter-width;
-    margin-right: 0;
+.media--bd {
+    overflow: hidden;
 }
-
-.media--bd {}

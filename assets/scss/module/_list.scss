@@ -12,10 +12,17 @@
 
 .list-inline {
     @extend %list-reset;
+    // remove white-space
+    font-size: 1px;
+    letter-spacing: -1px;
     > li {
+        margin-right: 5px;
         @include inline-block();
-        + li {
-            margin-left: 5px;
+        /* Redifine font size */
+        font-size: 14em;
+        letter-spacing: normal;
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

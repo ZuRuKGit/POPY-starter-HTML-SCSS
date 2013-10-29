@@ -83,7 +83,7 @@ $color-selection: $clr-1;
 //----------------------------------------
 
 // Grid choice
-$grid-fluid: true !default; // false for grid in px
+$grid-fluid: false !default; // false for grid in px
 
 // Wrapper max size in px
 $wrapper-max-width: 960px;

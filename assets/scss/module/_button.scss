@@ -2,7 +2,6 @@
 -------------------------- */
 
 %btn {
-    height: $base-line-height * 2;
     @include inline-block(middle);
     padding: 0 $base-line-height;
     margin: 0;
@@ -12,11 +11,22 @@
     cursor: pointer;
     border: none;
     text-decoration: none;
-    @include transition(all .2s ease-in-out);
-    @include border-radius($bdr-rad);
+    transition: all .2s ease-in-out;
+    border-radius: $bdr-rad;
     -webkit-user-drag: none;
     @include user-select(none);
     -webkit-appearance: none;
+}
+
+.btn {
+    @extend %btn;
+    height: $base-line-height * 2;
+    color: $white;
+    background-color: $clr-1;
+    &:hover {
+        color: $white;
+        background: $clr-1-darken;
+    }
 }
 
 .btn-s {
@@ -34,23 +44,3 @@
 }
 
 .btn-full { width: 100%; }
-
-.btn {
-    @extend %btn;
-    color: $white;
-    background-color: $clr-1;
-    &:hover {
-        color: $white;
-        background: $clr-1-darken;
-    }
-}
-
-.btn-cancel {
-    @extend %btn;
-    color: $white;
-    background-color: $clr-error;
-    &:hover {
-        color: $white;
-        background: shade($clr-error, 15%);
-    }
-}

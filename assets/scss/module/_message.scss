@@ -2,7 +2,6 @@
 -------------------------- */
 
 %message {
-    @include leader();
     @include trailer();
     padding: 1.5em;
 }
@@ -13,18 +12,18 @@
     background: $color;
 }
 
-.message-error {
+.msg-error {
     @include message($clr-error);
 }
 
-.message-sucess {
+.msg-sucess {
     @include message($clr-sucess);
 }
 
-.message-warn {
+.msg-warn {
     @include message($clr-warn);
 }
 
-.message-info {
+.msg-info {
     @include message($clr-info);
 }
