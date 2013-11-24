@@ -27,15 +27,17 @@
 
     <header class="header wrapper" role="banner">
         <a href="#" id="logo"></a>
-        <nav id="nav" role="navigation">
+        <nav role="navigation">
+            <ul id="nav">
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a></li>
+                <li><a href="#">link 4</a></li>
+            </ul>
         </nav>
     </header>
 
     <div class="content wrapper" role="main">
-        <div class="msg-error"><strong>Error !</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                <div class="msg-warn"><strong>Warn !</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                <div class="msg-sucess"><strong>Sucess!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-                <div class="msg-info"><strong>Info!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
         <div class="row">
             <div class="col-8" >
                 <h1>h1 Headings</h1>
@@ -104,6 +106,9 @@
             </div>
             <div class="col-8">
                 <form class="pure-form">
+                    <p>
+                        <input type="search" placeholder="recherche">
+                    </p>
                     <p>
                         Gender :
                                 <label for="form-radio-1">

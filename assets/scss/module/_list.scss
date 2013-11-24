@@ -1,28 +1,18 @@
 /* List
 -------------------------- */
 
-%list-reset {
+%list-reset, .list-reset {
     padding-left: 0;
     list-style: none;
 }
 
-.list-reset {
-    @extend %list-reset;
-}
-
+/* For remove whitespace minify html */
 .list-inline {
     @extend %list-reset;
-    // remove white-space
-    font-size: 1px;
-    letter-spacing: -1px;
     > li {
-        margin-right: 5px;
         @include inline-block();
-        /* Redifine font size */
-        font-size: 14em;
-        letter-spacing: normal;
-        &:last-child {
-            margin-right: 0;
+        + li {
+            margin-left: 10px;
         }
     }
 }

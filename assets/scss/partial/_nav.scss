@@ -1,0 +1,25 @@
+/* nav
+-------------------------- */
+
+#nav {
+    padding-left: $logo-w + 20;
+}
+
+.nav-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.nav-item {
+    @include inline-block();
+    + .nav-item {
+        margin-left: 10px;
+    }
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}

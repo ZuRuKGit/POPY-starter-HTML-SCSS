@@ -14,16 +14,22 @@
 .disp-b  { display: block; }
 .disp-i  { display: inline; }
 .disp-ib { @include inline-block; }
-.disp-t  { display: table; width: 100%; border-collapse: collapse; }
+
+.disp-t  {
+    display: table;
+    width: 100%;
+    border-collapse:
+    collapse;
+}
 .disp-tc { display: table-cell; }
 .disp-tr { display: table-row; }
 
+/* Alignement */
+.v-top    { vertical-align: top; }
+.v-middle { vertical-align: middle; }
+.v-bottom { vertical-align: bottom; }
+
 /* Width */
-%width-helper {
-  @include mq(small) {
-    width: auto;
-  }
-}
 
 .w10    { width: 10%; }
 .w20    { width: 20%; }
@@ -39,6 +45,12 @@
 .w80    { width: 80%;     @extend %width-helper; }
 .w90    { width: 90%;     @extend %width-helper; }
 .w100   { width: 100%;    @extend %width-helper; }
+
+%width-helper {
+  @include mq(small) {
+    width: auto;
+  }
+}
 
 /* Float */
 .fl-n { float: none; }

@@ -38,15 +38,12 @@ $clr-2-dark    : shade($clr-2, 15%);
 $clr-2-darken  : shade($clr-2, 30%);
 
 
-// Border radius
-$bdr-rad: 3px;
-
 //----------------------------------------
 //   Support
 //----------------------------------------
 
 // Browser support
-$ie7: true;
+$ie7: false;
 
 //----------------------------------------
 //   Typography
@@ -83,7 +80,7 @@ $color-selection: $clr-1;
 //----------------------------------------
 
 // Grid choice
-$grid-fluid: false !default; // false for grid in px
+$grid-fluid: true !default; // false for grid in px
 
 // Wrapper max size in px
 $wrapper-max-width: 960px;
@@ -105,3 +102,10 @@ $space-n : 0;
 $space-s : rhythm(.5,$base-font-size);
 $space-m : rhythm(1,$base-font-size);
 $space-l : rhythm(2,$base-font-size);
+
+//----------------------------------------
+//   Header
+//----------------------------------------
+
+$logo-w : 200px;
+$logo-h : 80px;

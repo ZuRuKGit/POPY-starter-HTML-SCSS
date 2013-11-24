@@ -1,8 +1,8 @@
 /*
 Projet: POPY - Framework
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
-Version: 2.0
-Date: September 2013
+Version: 2.2
+Date: November 2013
 */
 
 // Requiered    : Compass
@@ -32,6 +32,8 @@ Date: September 2013
    Module
 ------------------------------------------- */
 
+@import "module/_animate.scss";
+@import "module/_rounded.scss";
 @import "module/_grid.scss";
 @import "module/_list.scss";
 @import "module/_button.scss";
@@ -45,6 +47,7 @@ Date: September 2013
 ------------------------------------------- */
 
 @import "partial/_header.scss";
+@import "partial/_nav.scss";
 @import "partial/_content.scss";
 @import "partial/_aside.scss";
 @import "partial/_footer.scss";

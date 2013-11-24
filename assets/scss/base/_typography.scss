@@ -2,7 +2,7 @@
 -------------------------- */
 
 /* Reset margin-top on first-child */
-p, #{headings()} {
+p, ul,  #{headings()} {
     &:first-child {
         margin-top: 0;
     }
@@ -14,46 +14,48 @@ p {
 }
 
 /* Headings */
-#{headings()},
-.title-h1,
-.title-h2,
-.title-h3,
-.title-h4,
-.title-h5,
-.title-h6 {
-    font-style: normal;
-    font-weight: bold;
+
+%base {
+    font: {
+        style: normal;
+        weight: bold;
+    }
     text-rendering: optimizeLegibility;
 }
 
+%margin {
+    margin-top:    rhythm(1,$base-line-height*2);
+    margin-bottom: rhythm(1,$base-line-height*2);
+}
+
 h1, .title-h1 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(36px);
 }
 h2, .title-h2 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(30px);
 }
 h3, .title-h3 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(24px);
 }
 h4, .title-h4 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(18px);
 }
 h5, .title-h5 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(14px);
 }
 h6, .title-h6 {
-    margin-top:    rhythm(1,42px);
-    margin-bottom: rhythm(1,42px);
+    @extend %margin;
+    @extend %base;
     @include adjust-font-size-to(12px);
 }
 
@@ -101,13 +103,13 @@ code, kbd, pre, samp {
 pre {
     @include leader();
     @include trailer();
-    padding: 1.5em;
+    padding: rhythm(1);
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
-    @include rhythm-borders(1px);
+    border: 1px solid $clr-0-light;
     background-color: $clr-0-lighten;
-    @include border-radius(bdr-rad);
+    @extend %round-base;
 }
 
 blockquote {

@@ -4,7 +4,7 @@
 img { border: 0; }
 
 // Responsive content
-video, img, object {
+img, object, embed, canvas, video, audio {
     max-width: 100%;
     height: auto;
 }

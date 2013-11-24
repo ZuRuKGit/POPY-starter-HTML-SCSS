@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="no-js is-ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js is-ie8 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Grille</title>
+    <meta name="description" content="Grille CSS">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="css/screen.css" media="screen">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <style>
+        .wrapper { background: url('image/grid.png') 10px 0; }
+    </style>
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    </script>
+    <style>
+        [class*=col-] {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            background-color: rgba(255,0,0,.2);
+        }
+    </style>
+</head>
+
+<body role="document">
+
+    <div class="wrapper row">
+        <div class="col-4">.col-4</div>
+        <div class="col-4">.col-4</div>
+        <div class="col-4">.col-4</div>
+        <div class="col-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, consectetur, expedita, adipisci vero libero nisi totam eius sapiente aut voluptates dolorum culpa. Vero, tenetur possimus porro eum quod culpa minus.
+        </div>
+        <div class="col-6">.col-6</div>
+        <div class="col-4">.col-4</div>
+        <div class="col-4">.col-4</div>
+        <div class="col-4">.col-4</div>
+        <div class="col-6">.col-6</div>
+    </div>
+
+</body>
+
+</html>

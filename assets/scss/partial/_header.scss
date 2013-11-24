@@ -1,4 +1,26 @@
 /* Header
 -------------------------- */
 
-.header {}
+#header {
+    .wrapper {
+        position: relative;
+        min-height: $logo-h;
+    }
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    padding-top: $logo-h;
+    margin-top: - ($logo-h / 2);
+    height: 0;
+    width: $logo-w;
+    overflow: hidden;
+    background: $clr-0;
+    transition: all .3s ease-in-out;
+    &:hover, &:focus {
+        @include opacity(.5);
+    }
+}
