@@ -8,6 +8,17 @@
     clear: both;
 }
 
+.ir {
+    @include inline-block();
+    position: relative;
+    overflow: hidden;
+    direction: ltr;
+    text-align: left;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0) top left no-repeat;
+}
+
 .is-hide { display: none; }
 
 /* Display */

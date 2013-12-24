@@ -3,44 +3,36 @@
 
 %btn {
     @include inline-block(middle);
-    padding: 0 $base-line-height;
+    padding: 0 em($base-line-height, $base-font-size);
     margin: 0;
-    line-height: $base-line-height * 2;
+    height: em($base-line-height, $base-font-size) * 2;
+    line-height: em($base-line-height, $base-font-size) * 2;
     white-space: nowrap;
     text-align: center;
     cursor: pointer;
     border: none;
     text-decoration: none;
-    @extend %transition;
-    @extend %round-base;
+    color: $white;
+    background-color: $clr-1;
+    border-radius: $rad;
+    transition: $trans;
     -webkit-user-drag: none;
     @include user-select(none);
     -webkit-appearance: none;
-}
-
-.btn {
-    @extend %btn;
-    height: $base-line-height * 2;
-    color: $white;
-    background-color: $clr-1;
     &:hover {
         color: $white;
         background: $clr-1-darken;
     }
 }
 
-.btn-s {
-    height: $base-line-height;
-    padding: 0 $base-line-height / 2;
-    line-height: $base-line-height;
-    font-size: em(10px, 14px);
+.btn {
+    @extend %btn;
+
 }
 
-.btn-l {
-    height: $base-line-height * 3;
-    padding: 0 $base-line-height * 2;
-    line-height: $base-line-height * 3;
-    font-size: em(20px, 14px);
+.btn-s {
+    @extend %btn;
+    font-size: em(10px, 14px);
 }
 
 .btn-full { width: 100%; }

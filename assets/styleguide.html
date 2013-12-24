@@ -13,9 +13,13 @@
     <style>
         .wrapper { background: url('image/grid.png') 10px 0; }
     </style>
-    <script>
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
-    </script>
+    <style>
+        .demo-ir {
+            width: 150px;
+            height: 80px;
+            background-image: url('http://placehold.it/150x80')
+        }
+    </style>
 </head>
 
 <body role="document">
@@ -23,35 +27,34 @@
     <div class="content wrapper" role="main">
         <div class="row">
             <div class="col-8" >
-                <h1>h1 Headings</h1>
-                <p class="bigger"><strong>Bigger</strong> lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem, quisquam, molestias, error itaque veritatis sequi consequatur quam corporis vel illum quas voluptatibus cum nostrum laboriosam eum nam doloribus recusandae!</p>
+                <h1 class="title-h1">h1 Headings</h1>
+                <p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem, quisquam, molestias, error itaque veritatis sequi consequatur quam corporis vel illum quas voluptatibus cum nostrum laboriosam eum nam doloribus recusandae!</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
-                <h2>h2 Headings</h2>
+                <h2 class="title-h2">h2 Headings</h2>
                 <ol>
                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, consequuntur, iusto id ex dolorem voluptates modi dolor amet blanditiis porro non recusandae odit iste odio neque natus veritatis quisquam quod.</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, a, earum beatae quae possimus doloremque tempora quis adipisci non expedita quisquam quia commodi eveniet et id officiis quas sapiente deleniti!</li>
                 </ol>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, omnis, aperiam repellendus corporis eum harum rerum ut ratione itaque. Itaque obcaecati perspiciatis inventore soluta ipsa praesentium vel deleniti ipsam doloremque?</p>
-                <h3>H3 Headings</h3>
+                <h3 class="title-h3">H3 Headings</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
-                <h4>H4 Headings</h4>
+                <h4 class="title-h4">H4 Headings</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
-<pre>
-.box-hd {
+<pre><code>.box-hd {
     padding: 1px;
     border: 1px solid #111;
-}</pre>
+}</code></pre>
                 <blockquote>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                     <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
                 </blockquote>
             </div>
             <div class="col-4">
-                <h5>H5 Headings</h5>
+                <h5 class="title-h5">H5 Headings</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
-                <h6>H6 Headings</h6>
-                <p class="smaller"><strong>Smaller</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
+                <h6 class="title-h6">H6 Headings</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dicta, minima, nihil, quo dolor aut provident reprehenderit odit nobis aspernatur ad repudiandae ullam voluptas possimus molestias quidem voluptatum officia ex!</p>
                 <hr>
                 <ul>
                     <li>lorem ipsum</li>
@@ -86,6 +89,8 @@
                     <li>The <kbd>kbd element</kbd> example</li>
                     <li>The <span>span element</span> example</li>
                 </ul>
+                <p class="title-h5">Image de remplacement</p>
+                <span class="ir demo-ir">Texte de remplacement</span>
             </div>
             <div class="col-8">
                 <form class="pure-form">
@@ -126,7 +131,6 @@
                         </div>
                     </div>
                     <p>
-                        <a href="#" class="btn btn-l">Link Button Large</a>
                         <a href="#" class="btn">Link Button</a>
                         <a href="#" class="btn-s">Link Button Small</a>
                     </p>

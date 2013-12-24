@@ -4,11 +4,11 @@
 %message {
     @include trailer();
     padding: 1.5em;
+    color: $white;
 }
 
 @mixin message($color) {
     @extend %message;
-    color: $white;
     background: $color;
 }
 

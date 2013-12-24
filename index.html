@@ -5,14 +5,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Titre de la page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/screen.css" media="screen">
     <link rel="stylesheet" href="assets/css/print.css" media="print">
-    <script>
-        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
-    </script>
     <!--[if lt IE 9]> <script type="text/javascript"> document.createElement("header"); document.createElement("footer"); document.createElement("section"); document.createElement("aside"); document.createElement("nav"); document.createElement("article"); document.createElement("figure"); document.createElement("figcaption"); </script> <![endif]-->
 </head>
 
@@ -22,39 +19,56 @@
         <p class="message-warn txt-c">Pour une meilleure expérience utilisateur, merci d'activer Javascipt dans les préférences de votre navigateur.</p>
     </noscript>
 
-    <header id="header" role="banner">
-        <div class="wrapper">
-            <a href="#" id="logo" rel="home"></a>
-            <nav id="nav" role="navigation">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="/" rel="home" class="nav-link is-active">Accueil</a>
-                    </li><li class="nav-item">
-                        <a href="#" class="nav-link is-active">Item link</a>
+    <header class="header" role="banner">
+        <div class="wrapper ">
+            <a href="/" class="logo" rel="home"></a>
+            <div class="nav-btn"></div>
+            <nav class="navbar txt-r" role="navigation">
+                <ul class="navbar--list">
+                    <li class="navbar--item">
+                        <a href="/" rel="home" class="navbar--link is-active">Accueil</a>
+                    </li><li class="navbar--item">
+                        <a href="#" class="navbar--link">Item link</a>
+                    </li><li class="navbar--item">
+                        <a href="#" class="navbar--link">Item link</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="wrapper">
+    <div class="content wrapper row">
 
-        <section id"content" role="main">
+        <section class="main col-8" role="main">
+            <h1 class="title-h1">Titre</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, blanditiis, inventore, aut, expedita provident sequi explicabo atque debitis aspernatur veritatis iste ullam minus natus culpa dolore at perferendis voluptates sint!</p>
+            <img src="http://placehold.it/960x300" alt="Placeholder" width="960" height="300" />
         </section>
 
-        <aside role="complementary">
+        <aside class="aside col-4" role="complementary">
+            <h2 class="title-h2">Widget</h2>
+            <ul class="list-reset">
+                <li><a href="#">fake link</a></li>
+                <li><a href="#">fake link</a></li>
+                <li><a href="#">fake link</a></li>
+                <li><a href="#">fake link</a></li>
+                <li><a href="#">fake link</a></li>
+            </ul>
         </aside>
 
     </div>
 
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <div class="wrapper">
-            <small>&copy 2013</small>
+            <div class="disp-t">
+                <small class="disp-tc">&copy 2013 - Sutterlity</small>
+                <div class="disp-tc txt-r"><a href="#">RSS</a></div>
+            </div>
         </div>
     </footer>
 
-     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
     <script src="assets/js/main.js"></script>
 
 </body>

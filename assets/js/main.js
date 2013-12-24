@@ -1,5 +1,4 @@
-$(document).ready(function(){
+document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
 
-	console.log("script 'main.js' chargé");
-
-});
+// $(document).ready(function(){
+// });

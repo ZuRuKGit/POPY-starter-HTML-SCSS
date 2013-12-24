@@ -1,25 +1,33 @@
 /* nav
 -------------------------- */
 
-#nav {
-    padding-left: $logo-w + 20;
+.navbar {
+    padding: 2em 0 2em ($logo-w + 20);
+    .is-active {
+        color: $white;
+    }
 }
 
-.nav-list {
+.navbar--list {
     margin: 0;
-    padding-left: 0;
-    list-style: none;
 }
 
-.nav-item {
+.navbar--item {
     @include inline-block();
-    + .nav-item {
+    + .navbar--item {
         margin-left: 10px;
     }
 }
 
-.nav-link {
+.navbar--link {
     display: block;
+    padding: 0 10px;
+    line-height: $base-line-height * 2;
     text-decoration: none;
-    transition: all .3s ease-in-out;
+    border-radius: $rad;
+    transition: $trans;
+    &:hover, &:focus {
+        background: $clr-1;
+        color: $white;
+    }
 }

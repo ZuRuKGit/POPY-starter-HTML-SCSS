@@ -29,23 +29,18 @@ $col-width: $row-width / $cols;
     }
     margin-left: auto;
     margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .row {
-    // remove white-space
-    font-size: 1px;
-    letter-spacing: -1px;
-    .row {
-        margin-left: -$gutter-width / 2;
-        margin-right: -$gutter-width / 2;
-    }
+    padding-left: 0;
+    padding-right: 0;
+    @include clearfix;
 }
 
 [class*=col-] {
-    @include inline-block(top);
-    /* Redifine font size */
-    font-size: 14em;
-    letter-spacing: normal;
+    float: left;
     padding-left: $gutter-width / 2;
     padding-right: $gutter-width / 2;
 }
@@ -65,8 +60,14 @@ $col-width: $row-width / $cols;
 }
 
 @include mq(tiny) {
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     [class*=col-] {
         display: block;
         width: auto;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

@@ -1,25 +1,26 @@
 /* Header
 -------------------------- */
 
-#header {
+.header {
+    background: $clr-0-darken;
     .wrapper {
         position: relative;
         min-height: $logo-h;
     }
 }
 
-#logo {
+.logo {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     display: block;
     padding-top: $logo-h;
     margin-top: - ($logo-h / 2);
     height: 0;
     width: $logo-w;
     overflow: hidden;
-    background: $clr-0;
-    transition: all .3s ease-in-out;
+    background: image-url('logo.png') center no-repeat;
+    @include transition(all .3s ease-in-out);
     &:hover, &:focus {
         @include opacity(.5);
     }

@@ -1,3 +1,5 @@
+/* form */
+
 // Define consistent border, margin, and padding.
 fieldset {
     border: 1px solid $clr-0-lighten;
@@ -14,6 +16,7 @@ legend {
 
 label {
     cursor: pointer;
+    color: $clr-1;
 }
 
 // 1. Correct font family not being inherited in all browsers.
@@ -71,8 +74,8 @@ html input[disabled] {
 // 1. Remove excess padding in IE 8/9/10.
 [type="checkbox"],
 [type="radio"] {
-    width: 12px;
-    height: 12px;
+    width: .8em;
+    height: .8em;
     padding: 0; // 1
     vertical-align: baseline;
 }
@@ -109,11 +112,12 @@ textarea,
 [type="email"],
 [type="search"] {
     width: 100%;
-    border: 1px solid $clr-0-lighten;
-    @extend %round-base;
-    @extend %transition;
+    border: em(1px, $base-font-size) solid $clr-0-light;
+    border-radius: $rad;
+    transition: $trans;
     &:hover, &:focus {
-        border-color: $clr-0-light;
+        border-color: shade($clr-0-light, 40%);
+        background-color: $clr-0-lighten;
     }
 }
 
@@ -121,15 +125,15 @@ textarea,
 [type="password"],
 [type="email"],
 [type="search"] {
-    height: $base-line-height * 2;
-    padding: 0 $base-line-height;
+    height: em($base-line-height, $base-font-size) * 2;
+    padding: 0 em($base-line-height, $base-font-size);
     .lt-ie9 & {
-        line-height: $base-line-height * 2;
+        line-height: em($base-line-height, $base-font-size) * 2;
     }
 }
 
 // 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
 input[type="search"] {
     -webkit-appearance: textfield; // 1
-    border-radius: $base-line-height;
+    border-radius: em($base-line-height, $base-font-size);
 }

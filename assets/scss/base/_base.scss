@@ -1,14 +1,13 @@
 /* Base */
 
-html {
-    height: 100%;
-    font-size: 62.5%
-}
+html { height: 100%; }
 
 body {
     min-height: 100%;
     margin: 0;
-    font: #{$font-size-em}/#{$line-height} $sans-serif;
+    @include adjust-font-size-to(14px);
+    font-family: $sans-serif;
+    font-weight: 300;
     color: $text-clr;
     background: #fff;
 }

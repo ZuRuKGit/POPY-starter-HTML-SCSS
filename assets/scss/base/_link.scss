@@ -2,6 +2,8 @@
 
 a {
     color: $color-link;
+    // Remove the gray background color from active links in IE 10
+    background: transparent;
     &:hover {
         color: $color-link-hover;
     }

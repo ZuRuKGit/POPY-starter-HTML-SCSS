@@ -28,16 +28,16 @@
 // 3 = Media Queries
 @mixin mq($screen) {
     @if $screen == large  {
-        @media (min-width: 1280px) { @content; }
+        @media (min-width: 80em) { @content; }
     }
     @if $screen == medium {
-        @media (min-width: 769px) { @content; }
+        @media (min-width: 48.063em) { @content; }
     }
     @if $screen == small {
-        @media (max-width: 768px)  { @content; }
+        @media (max-width: 48em)  { @content; }
     }
     @if $screen == tiny  {
-        @media (max-width: 640px)  { @content; }
+        @media (max-width: 40em) { @content; }
     }
     @if $screen == retina {
         @media
