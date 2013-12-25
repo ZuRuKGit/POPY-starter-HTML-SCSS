@@ -1,6 +1,9 @@
 /* Base */
 
-html { height: 100%; }
+html {
+    font-size: 87.5%;
+    height: 100%;
+}
 
 body {
     min-height: 100%;
@@ -10,6 +13,7 @@ body {
     font-weight: 300;
     color: $text-clr;
     background: #fff;
+    > script { display: none !important; }
 }
 
 *, *:before, *:after {

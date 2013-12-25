@@ -29,8 +29,6 @@ $col-width: $row-width / $cols;
     }
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .row {
@@ -43,6 +41,10 @@ $col-width: $row-width / $cols;
     float: left;
     padding-left: $gutter-width / 2;
     padding-right: $gutter-width / 2;
+    &.row {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /* Column */
@@ -65,8 +67,7 @@ $col-width: $row-width / $cols;
         padding-right: 10px;
     }
     [class*=col-] {
-        display: block;
-        width: auto;
+        width: 100%;
         padding-left: 0;
         padding-right: 0;
     }

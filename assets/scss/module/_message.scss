@@ -1,29 +1,37 @@
 /* Message
 -------------------------- */
 
-%message {
+[class*="msg-"] {
     @include trailer();
     padding: 1.5em;
     color: $white;
-}
-
-@mixin message($color) {
-    @extend %message;
-    background: $color;
+     a, strong { color: $white; }
 }
 
 .msg-error {
-    @include message($clr-error);
+    background: $clr-error;
+    a:hover, a:focus {
+        color: shade($clr-error, 50%)
+    }
 }
 
 .msg-sucess {
-    @include message($clr-sucess);
+    background: $clr-sucess;
+    a:hover, a:focus {
+        color: shade($clr-sucess, 50%)
+    }
 }
 
 .msg-warn {
-    @include message($clr-warn);
+    background: $clr-warn;
+    a:hover, a:focus {
+        color: shade($clr-warn, 50%)
+    }
 }
 
 .msg-info {
-    @include message($clr-info);
+    background: $clr-info;
+    a:hover, a:focus {
+        color: shade($clr-info, 50%)
+    }
 }

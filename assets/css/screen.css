@@ -1,8 +1,8 @@
 /*
 Projet: POPY - Framework
 Author: Laurent SUTTERLITY - laurent@sutterlity.fr
-Version: 2.2
-Date: November 2013
+Version: 2.3.1
+Date: December 2013
 */
 /* ----------------------------------------
    Base / Normalize
@@ -28,6 +28,7 @@ audio:not([controls]) {
 
 /* Base */
 html {
+  font-size: 87.5%;
   height: 100%;
 }
 
@@ -40,6 +41,9 @@ body {
   font-weight: 300;
   color: #888888;
   background: #fff;
+}
+body > script {
+  display: none !important;
 }
 
 *, *:before, *:after {
@@ -430,10 +434,6 @@ table {
 /* ----------------------------------------
    Module
 ------------------------------------------- */
-/* Animate
--------------------------- */
-/* Rounded
--------------------------- */
 /* Grid
 -------------------------- */
 .wrapper {
@@ -441,8 +441,6 @@ table {
   min-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .row {
@@ -461,6 +459,10 @@ table {
   float: left;
   padding-left: 10px;
   padding-right: 10px;
+}
+[class*=col-].row {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Column */
@@ -564,8 +566,7 @@ table {
   }
 
   [class*=col-] {
-    display: block;
-    width: auto;
+    width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
@@ -654,26 +655,41 @@ table {
 
 /* Message
 -------------------------- */
-.msg-error, .msg-sucess, .msg-warn, .msg-info {
+[class*="msg-"] {
   margin-bottom: 1.5em;
   padding: 1.5em;
+  color: white;
+}
+[class*="msg-"] a, [class*="msg-"] strong {
   color: white;
 }
 
 .msg-error {
   background: #e74c3c;
 }
+.msg-error a:hover, .msg-error a:focus {
+  color: #73261e;
+}
 
 .msg-sucess {
   background: #54b980;
+}
+.msg-sucess a:hover, .msg-sucess a:focus {
+  color: #2a5c40;
 }
 
 .msg-warn {
   background: #f1c40f;
 }
+.msg-warn a:hover, .msg-warn a:focus {
+  color: #786207;
+}
 
 .msg-info {
   background: #95a5a6;
+}
+.msg-info a:hover, .msg-info a:focus {
+  color: #4a5253;
 }
 
 /* ----------------------------------------

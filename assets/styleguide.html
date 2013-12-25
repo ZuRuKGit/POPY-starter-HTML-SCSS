@@ -19,12 +19,37 @@
             height: 80px;
             background-image: url('http://placehold.it/150x80')
         }
+        .header .wrapper {
+            background-image: none;
+        }
+        .header {
+            margin-bottom: 3em;
+        }
+        body { padding: 0 0 3em 0; }
+        .header .title-h3 { color: #fff;}
     </style>
 </head>
 
 <body role="document">
+    <header class="header" role="banner">
+        <div class="wrapper">
+            <a href="../index.html" class="logo" rel="home"></a>
+            <div class="nav-btn"></div>
+            <nav class="navbar txt-r" role="navigation">
+                <ul class="navbar--list">
+                    <li class="navbar--item">
+                        <a href="../index.html" rel="home" class="navbar--link">Index</a>
+                    </li><li class="navbar--item">
+                        <a href="styleguide.html" class="navbar--link is-active">Styleguide</a>
+                    </li><li class="navbar--item">
+                        <a href="grille.html" class="navbar--link">Grille</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="content wrapper" role="main">
+    <div class="content wrapper mtn" role="main">
         <div class="row">
             <div class="col-8" >
                 <h1 class="title-h1">h1 Headings</h1>

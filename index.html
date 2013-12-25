@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 7]>         <html class="no-js is-ie7 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js is-ie8 lt-ie9"> <![endif]-->
+<!--[if IE 8]> <html class="no-js is-ie8 lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
 <head>
@@ -10,27 +9,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/screen.css" media="screen">
     <link rel="stylesheet" href="assets/css/print.css" media="print">
-    <!--[if lt IE 9]> <script type="text/javascript"> document.createElement("header"); document.createElement("footer"); document.createElement("section"); document.createElement("aside"); document.createElement("nav"); document.createElement("article"); document.createElement("figure"); document.createElement("figcaption"); </script> <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 
 <body role="document">
 
+    <!--[if lt IE 8]>
+        <p class="msg-error mbn txt-c">Vous utilisez un navigateur obsolète. Merci de faire <a href="http://browsehappy.com/?locale=fr_FR">la mise à niveau</a> de votre navigateur pour améliorer votre expérience.</p>
+    <![endif]-->
+
     <noscript>
-        <p class="message-warn txt-c">Pour une meilleure expérience utilisateur, merci d'activer Javascipt dans les préférences de votre navigateur.</p>
+        <p class="msg-error mbn txt-c">Ce site nécessite JavaScript afin de fonctionner correctement. Merci de l'activer dans votre navigateur.</p>
     </noscript>
 
     <header class="header" role="banner">
-        <div class="wrapper ">
-            <a href="/" class="logo" rel="home"></a>
+        <div class="wrapper">
+            <a href="index.html" class="logo" rel="home"></a>
             <div class="nav-btn"></div>
             <nav class="navbar txt-r" role="navigation">
                 <ul class="navbar--list">
                     <li class="navbar--item">
-                        <a href="/" rel="home" class="navbar--link is-active">Accueil</a>
+                        <a href="/" rel="home" class="navbar--link is-active">Index</a>
                     </li><li class="navbar--item">
-                        <a href="#" class="navbar--link">Item link</a>
+                        <a href="assets/styleguide.html" class="navbar--link">Styleguide</a>
                     </li><li class="navbar--item">
-                        <a href="#" class="navbar--link">Item link</a>
+                        <a href="assets/grille.html" class="navbar--link">Grille</a>
                     </li>
                 </ul>
             </nav>
@@ -67,7 +72,7 @@
         </div>
     </footer>
 
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
     <script src="assets/js/main.js"></script>
 

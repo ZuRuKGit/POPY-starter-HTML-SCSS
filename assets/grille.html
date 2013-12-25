@@ -11,32 +11,208 @@
     <link rel="stylesheet" href="css/screen.css" media="screen">
     <link rel="stylesheet" href="css/print.css" media="print">
     <style>
-        .wrapper { background: url('image/grid.png') 10px 0; }
-    </style>
-    <style>
-        [class*=col-] {
-            padding-top: 10px;
-            padding-bottom: 10px;
+        body { padding: 0 0 3em 0; }
+        .title-h3 { color: #fff;}
+        .wrapper.row {
+            background: url('image/grid.png') 10px 0;
+            padding-bottom: 21px;
+        }
+        .inner {
+            font-size: 12px;
+            line-height: 42px;
+            margin-top: 21px;
             text-align: center;
-            background-color: rgba(255,0,0,.2);
+            color: #fff;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 3px;
         }
     </style>
 </head>
 
 <body role="document">
-
-    <div class="wrapper row">
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, consectetur, expedita, adipisci vero libero nisi totam eius sapiente aut voluptates dolorum culpa. Vero, tenetur possimus porro eum quod culpa minus.
+    <header class="header" role="banner">
+        <div class="wrapper">
+            <a href="../index.html" class="logo" rel="home"></a>
+            <div class="nav-btn"></div>
+            <nav class="navbar txt-r" role="navigation">
+                <ul class="navbar--list">
+                    <li class="navbar--item">
+                        <a href="../index.html" rel="home" class="navbar--link">Index</a>
+                    </li><li class="navbar--item">
+                        <a href="styleguide.html" class="navbar--link">Styleguide</a>
+                    </li><li class="navbar--item">
+                        <a href="grille.html" class="navbar--link is-active">Grille</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="col-6">.col-6</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-4">.col-4</div>
-        <div class="col-6">.col-6</div>
+    </header>
+    <div class="wrapper row">
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-1">
+            <div class="inner">.col-1</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-2">
+            <div class="inner">.col-2</div>
+        </div>
+        <div class="col-3">
+            <div class="inner">.col-3</div>
+        </div>
+        <div class="col-3">
+            <div class="inner">.col-3</div>
+        </div>
+        <div class="col-3">
+            <div class="inner">.col-3</div>
+        </div>
+        <div class="col-3">
+            <div class="inner">.col-3</div>
+        </div>
+        <div class="col-4">
+            <div class="inner">.col-4</div>
+        </div>
+        <div class="col-4">
+            <div class="inner">.col-4</div>
+        </div>
+        <div class="col-4">
+            <div class="inner">.col-4</div>
+        </div>
+        <div class="col-6">
+            <div class="inner">.col-6</div>
+        </div>
+        <div class="col-6">
+            <div class="inner">.col-6</div>
+        </div>
+        <div class="col-6">
+            <div class="inner">.col-6</div>
+        </div>
+        <div class="col-6">
+            <div class="inner">.col-6</div>
+        </div>
+        <div class="col-12">
+            <div class="inner">.col-12</div>
+        </div>
+    </div>
+
+    <h2 class="title-h4 txt-c mbl mtl">Inception</h2>
+    <div class="wrapper row">
+        <div class="col-6">
+            <div class="inner">col-6</div>
+        </div>
+        <div class="col-6 row">
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-12">
+                <div class="inner">.col-12</div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="inner">col-6</div>
+        </div>
+        <div class="col-6 row">
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-4">
+                <div class="inner">.col-3</div>
+            </div>
+            <div class="col-12">
+                <div class="inner">.col-12</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="title-h4 txt-c mbl mtl">Décalage</h2>
+    <div class="wrapper row">
+        <div class="col-11 offset-col-1">
+            <div class="inner">.col-11.offset-col-1</div>
+        </div>
+        <div class="col-10 offset-col-2">
+            <div class="inner">.col-10.offset-col-2</div>
+        </div>
+        <div class="col-9 offset-col-3">
+            <div class="inner">.col-9.offset-col-3</div>
+        </div>
+        <div class="col-8 offset-col-4">
+            <div class="inner">.col-8.offset-col-4</div>
+        </div>
+        <div class="col-7 offset-col-5">
+            <div class="inner">.col-7.offset-col-5</div>
+        </div>
+        <div class="col-6 offset-col-6">
+            <div class="inner">.col-6.offset-col-6</div>
+        </div>
+        <div class="col-5 offset-col-7">
+            <div class="inner">.col-7.offset-col-5</div>
+        </div>
+        <div class="col-4 offset-col-8">
+            <div class="inner">.col-4.offset-col-8</div>
+        </div>
+        <div class="col-3 offset-col-9">
+            <div class="inner">.col-3.offset-col-9</div>
+        </div>
+        <div class="col-2 offset-col-10">
+            <div class="inner">.col-2.offset-col-10</div>
+        </div>
+        <div class="col-1 offset-col-11">
+            <div class="inner">.col-1.offset-col-11</div>
+        </div>
     </div>
 
 </body>
