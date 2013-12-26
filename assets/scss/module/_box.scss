@@ -3,6 +3,18 @@
 
 /* box */
 .box {}
-.box--hd {}
-.box--bd {}
+.box--hd {
+    padding: 0 10px;
+    background-color: $clr-0-light;
+    border-radius: $rad $rad 0 0;
+    [class*="title-"] {
+        color: $clr-0;
+        margin-bottom: 0;
+    }
+}
+.box--bd {
+    padding: 10px;
+    background-color: $clr-0-lighten;
+    border-radius: 0 0 $rad $rad;
+}
 .box--ft {}

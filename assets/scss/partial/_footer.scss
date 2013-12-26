@@ -4,4 +4,8 @@
 .footer {
     padding: $space-m 0;
     border-top: 1px solid $clr-0-light;
+    .wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

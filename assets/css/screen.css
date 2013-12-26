@@ -646,6 +646,22 @@ table {
 /* Box
 -------------------------- */
 /* box */
+.box--hd {
+  padding: 0 10px;
+  background-color: #dddddd;
+  border-radius: 3px 3px 0 0;
+}
+.box--hd [class*="title-"] {
+  color: #888888;
+  margin-bottom: 0;
+}
+
+.box--bd {
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 0 0 3px 3px;
+}
+
 /* Icon
 -------------------------- */
 [class*="icon-"] {
@@ -703,6 +719,8 @@ table {
 .header .wrapper {
   position: relative;
   min-height: 84px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .logo {
@@ -772,6 +790,10 @@ table {
 .footer {
   padding: 1.5em 0;
   border-top: 1px solid #dddddd;
+}
+.footer .wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* ----------------------------------------
